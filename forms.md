@@ -80,6 +80,37 @@ Each form must have a field named "processing_rule" containing ID of Processing
 Rule you created for this form. Typically you'll want it to be a hidden field,
 unless you do something very special.
 
+### Field names
+
+The widget sends to Cub all HTML fields which you provide in the ``<form>``
+tag. This is pretty much like standard ``<form>`` submit behavior, but the
+data is sent to Cub. So to add an extra field to the form you just add it to
+form HTML markup and all done - it will be sent to Cub. This gives you great
+flexibility in adding or modifying form fields.
+
+Although widget is very flexible in accepting arbitrary form data, we strongly
+encourage you to follow these naming conventions for pre-defined fields:
+
+**Personal User Data**
+- first_name
+- last_name
+- email
+- phone
+- address
+- city
+- state
+- country
+- zip
+
+**Organization Data**
+- organization_name
+- organization_phone
+- organization_address
+- organization_city
+- organization_state
+- organization_country
+- organization_zip
+
 
 ### Form events and custom handlers
 
