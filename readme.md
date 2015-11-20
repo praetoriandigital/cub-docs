@@ -49,8 +49,8 @@ register your application in Cub Admin and get an API key.
 
 Please follow these links for detailed usage instructions:
 
-* [Users Login and Registration](https://github.com/praetoriandigital/cub/blob/master/registration.md)
-* [Lead Forms](https://github.com/praetoriandigital/cub/blob/master/forms.md)
+* [Users Login and Registration](https://github.com/praetoriandigital/cub-docs/blob/master/registration.md)
+* [Lead Forms](https://github.com/praetoriandigital/cub-docs/blob/master/forms.md)
 
 ### Browser compatibility
 
