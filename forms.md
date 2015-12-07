@@ -104,6 +104,7 @@ encourage you to follow these naming conventions for pre-defined fields:
 
 **Organization Data**
 - organization_name
+- organization_size
 - organization_phone
 - organization_address
 - organization_city
@@ -111,6 +112,12 @@ encourage you to follow these naming conventions for pre-defined fields:
 - organization_country
 - organization_zip
 
+**Organization Membership Data**
+- member_position
+ 
+**Miscellaneous**
+- comment
+- source
 
 ### Form events and custom handlers
 
