@@ -158,13 +158,13 @@ following:
         onError(topError, fieldErrors, formData, formElement);
         ```
         
-        ``topError`` is a form-level error, i.e. that kind of error which is not
-        related to a particular field. For example, this could be a server
-        connection error, or an error which is related to validation of multiple
-        fields. ``fieldErrors`` is an object with field names as keys and error
-        messages as values. ``formData`` and ``formElement`` mean the same as for
-        other callbacks, these are submitted form data and form DOM element
-        respectively.
+        ``topError`` is a string containing top-level error message (optional). 
+        Top-level error is an error which is not related to a particular field.
+        For example, this could be a server connection error, or an error which
+        is related to validation of multiple fields. ``fieldErrors`` is an 
+        object with field names as keys and error messages as values. ``formData``
+        and ``formElement`` mean the same as for other callbacks, these are
+        submitted form data and form DOM element respectively.
   
         If you didn't provide custom ``onError`` handler, widget will try to
         locate pre-defined placeholders for form errors and paste error messages
