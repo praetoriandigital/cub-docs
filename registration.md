@@ -20,10 +20,9 @@ Add the following HTML code to your site:
 <script>
   var cubAsyncInit = function(cub) {
     // Configuration parameters
-    cub.setup({
+    cub.start({
       apiKey: '<your-public-API-key>'
     });
-    cub.start();
   };
 
   // Load Cub widget asynchronously

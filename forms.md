@@ -34,7 +34,7 @@ and send submitted form data to central Leads database:
 <script>
   var cubAsyncInit = function(cub) {
     // Configuration parameters
-    cub.setup({
+    cub.start({
       apiKey: '<your-public-API-key>',
 
       // forms parameter is an object with CSS selectors as keys
@@ -53,7 +53,6 @@ and send submitted form data to central Leads database:
       }
 
     });
-    cub.start();
   };
 
   // Load Cub widget asynchronously
@@ -114,7 +113,7 @@ encourage you to follow these naming conventions for pre-defined fields:
 
 **Organization Membership Data**
 - member_position
- 
+
 **Miscellaneous**
 - comment
 - source
@@ -129,11 +128,11 @@ following:
   2. If you provided a custom onSubmit callback for this form in options,
      widget will call your callback with two parameters, first is an object
      with submitted form data, and second is form DOM element:
-     
+
      ```js
      onSubmit(formData, formElement);
      ```
-     
+
      If you didn't provided a custom callback, widget will execute a standard
      onSubmit handler, which adds "processing" class to submitted ``<form>``.
      You can use it to add a visual indication that form is being processed.
@@ -148,28 +147,28 @@ following:
         ```js
         onSuccess(formData, formElement);
         ```
-        
+
         If custom ``onSuccess`` handler wasn't provided, widget shows a "Thank you"
         message and clears the form.
       * **Error:** if you provided a custom onError callback it will be called
         with the following parameters:
-        
+
         ```js
         onError(topError, fieldErrors, formData, formElement);
         ```
-        
-        ``topError`` is a string containing top-level error message (optional). 
+
+        ``topError`` is a string containing top-level error message (optional).
         Top-level error is an error which is not related to a particular field.
         For example, this could be a server connection error, or an error which
-        is related to validation of multiple fields. ``fieldErrors`` is an 
+        is related to validation of multiple fields. ``fieldErrors`` is an
         object with field names as keys and error messages as values. ``formData``
         and ``formElement`` mean the same as for other callbacks, these are
         submitted form data and form DOM element respectively.
-  
+
         If you didn't provide custom ``onError`` handler, widget will try to
         locate pre-defined placeholders for form errors and paste error messages
         into them. For top-level form error it will look for
-        ``<span class="cub-form-error">`` inside ``<form>`` tag. 
-        For field-level errors it looks for 
+        ``<span class="cub-form-error">`` inside ``<form>`` tag.
+        For field-level errors it looks for
         ``<span class="cub-field-error" data-field="{field_name}">`` for each
         field.

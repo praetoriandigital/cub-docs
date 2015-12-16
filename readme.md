@@ -21,10 +21,9 @@ Widget is loaded on a page with a piece of JavaScript, like this (example):
 <script>
   var cubAsyncInit = function(cub) {
     // Configuration parameters
-    cub.setup({
+    cub.start({
       apiKey: '<your-public-API-key>'
     });
-    cub.start();
   };
 
   // Load Cub widget asynchronously
@@ -43,7 +42,7 @@ Widget is loaded on a page with a piece of JavaScript, like this (example):
 When loaded, widget adds an interaction to the web page, either by rendering
 extra interactive elements on it, like Login and Registration forms, or by
 connecting to your existing HTML markup, like it does for Lead Forms. Widget
-takes configuration parameters via ``cub.setup()`` method. Required parameter
+takes configuration parameters via ``cub.start()`` method. Required parameter
 for all actions is ``apiKey``. Before you can use the widget, you have to
 register your application in Cub Admin and get an API key.
 
