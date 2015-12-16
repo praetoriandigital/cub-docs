@@ -169,6 +169,7 @@ following:
         If you didn't provide custom ``onError`` handler, widget will try to
         locate pre-defined placeholders for form errors and paste error messages
         into them. For top-level form error it will look for
-        ``<span class="top-error">`` inside ``<form>`` tag. For field-level errors
-        it looks for ``<span class="error" data-field="{field_name}">`` for each
+        ``<span class="cub-form-error">`` inside ``<form>`` tag. 
+        For field-level errors it looks for 
+        ``<span class="cub-field-error" data-field="{field_name}">`` for each
         field.
