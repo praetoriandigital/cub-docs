@@ -80,7 +80,8 @@ element for the template to render, like this:
 
 <div id="lead-form-container">
   <!-- Form template will be rendered inside this element,
-       replacing it's previous contents. -->
+       replacing it's previous contents.
+       HINT: you can add loader icon here. -->
 </div>
 
 <script>
