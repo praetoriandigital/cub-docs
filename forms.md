@@ -122,7 +122,7 @@ templates - ``lead-form`` and ``lead-form-compact``. Common parameters for
 both templates:
 
 * ``processing_rule`` - required, processing rule ID. See
-  [description below](#Processing-Rules);
+  [description below](#processing-rules);
 * ``stylesheet`` - optional, name of CSS stylesheet to pre-load for this form.
   The only supported option for now is ``minimal``. Minimal stylesheet defines
   the very basic layout and makes the form responsive. You can override
