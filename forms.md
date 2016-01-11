@@ -68,6 +68,109 @@ and send submitted form data to central Leads database:
 </script>
 ```
 
+
+### Form templates
+
+As an alternative for creating form layout from scratch, we have pre-built
+templates for common use-cases which already do this for you. To use a
+template you should specify template name, its parameters and a target HTML
+element for the template to render, like this:
+
+```html
+
+<div id="form-container">
+  <!-- Form template will be rendered inside this element,
+       replacing it's previous contents. -->
+</div>
+
+<script>
+  var cubAsyncInit = function(cub) {
+    // Configuration parameters
+    cub.start({
+      apiKey: '<your-public-API-key>',
+      forms: {
+        '#form-container': {
+          template: 'lead-form',
+          processing_rule: '<processing-rule-ID>',
+          stylesheet: 'minimal',
+          powered_by: 'PoliceOne',
+          product_options: [
+            'Product option 1 (replace with real product name)',
+            'Product option 2 (you can add more products here)'
+          ]
+        }
+      }
+    });
+  };
+
+  // Load Cub widget asynchronously
+  (function(){
+    if (document.getElementById("cub-widget-script")) {return;}
+    var firstScript = document.getElementsByTagName("script")[0];
+    var cubJs = document.createElement("script");
+    cubJs.id = "cub-widget-script";
+    // See notes about widget versioning
+    cubJs.src = "//cub-praetorian.netdna-ssl.com/cub-widget.js";
+    firstScript.parentNode.insertBefore(cubJs, firstScript);
+  }());
+</script>
+```
+
+In the example above, target container is set to ``#form-container`` and
+template name is set to ``lead-form``. At the moment we have 2 pre-built
+templates - ``lead-form`` and ``lead-form-compact``. Common parameters for
+both templates:
+
+* ``processing_rule`` - required, processing rule ID. See
+  [description below](#Processing Rules);
+* ``stylesheet`` - optional, name of CSS stylesheet to pre-load for this form.
+  The only supported option for now is ``minimal``. Minimal stylesheet defines
+  the very basic layout and makes the form responsive. You can override
+  any of styles defined by pre-loaded stylesheet in your main site CSS. If
+  you want to completely disable pre-loaded stylesheet, remove this parameter;
+* ``powered_by`` - adds "Powered by" logo. Required for 3rd-party installations.
+  Possible options: ``PoliceOne``, ``FireRescue1``, ``EMS1``,
+  ``CorrectionsOne``, ``Military1``, ``LocalGovU``;
+* ``product_options`` - optional, list of products associated with this form.
+  If the list contains only one item, it will be rendered as a hidden field.
+  If there are 2 or more items, it will be rendered as a checkbox group, so
+  users can choose product(s) in which they are interested;
+* ``<form-field-name>`` - optional, pre-populate form with given value for this
+  field. If somehow you already know your customer's name, email or another
+  details, you can provide them as parameters. See field names below:
+
+Fields of ``lead-form`` template:
+
+* first_name
+* last_name
+* email
+* organization_name
+* organization_size
+* member_position
+* zip
+* country
+* state
+* phone
+* purchase_for_organization
+* purchasing_timeframe
+* looking_for
+* products
+* source (hidden field, used internally for reports)
+
+Fields of ``lead-form-compact`` template:
+
+* first_name
+* last_name
+* email
+* organization_name
+* organization_size
+* zip
+* phone
+* purchase_for_organization
+* purchasing_timeframe
+* products
+* source (hidden field, used internally for reports)
+
 ### Processing Rules
 
 Before creating your form, please define a Processing Rule for it in Cub Admin
