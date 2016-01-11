@@ -78,7 +78,7 @@ element for the template to render, like this:
 
 ```html
 
-<div id="form-container">
+<div id="lead-form-container">
   <!-- Form template will be rendered inside this element,
        replacing it's previous contents. -->
 </div>
@@ -89,7 +89,7 @@ element for the template to render, like this:
     cub.start({
       apiKey: '<your-public-API-key>',
       forms: {
-        '#form-container': {
+        '#lead-form-container': {
           template: 'lead-form',
           processing_rule: '<processing-rule-ID>',
           stylesheet: 'minimal',
@@ -116,7 +116,7 @@ element for the template to render, like this:
 </script>
 ```
 
-In the example above, target container is set to ``#form-container`` and
+In the example above, target container is set to ``#lead-form-container`` and
 template name is set to ``lead-form``. At the moment we have 2 pre-built
 templates - ``lead-form`` and ``lead-form-compact``. Common parameters for
 both templates:
