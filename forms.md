@@ -155,6 +155,7 @@ Fields of ``lead-form`` template:
 * purchase_for_organization
 * purchasing_timeframe
 * looking_for
+* looking_for_other
 * products
 * source (hidden field, used internally for reports)
 
