@@ -156,6 +156,7 @@ Fields of ``lead-form`` template:
 * purchasing_timeframe
 * looking_for
 * looking_for_other
+* company
 * products
 * source (hidden field, used internally for reports)
 
@@ -170,6 +171,7 @@ Fields of ``lead-form-compact`` template:
 * phone
 * purchase_for_organization
 * purchasing_timeframe
+* company
 * products
 * source (hidden field, used internally for reports)
 
