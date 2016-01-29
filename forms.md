@@ -157,7 +157,8 @@ Fields of ``lead-form`` template:
 * looking_for
 * looking_for_other
 * company (hidden field, pass company name)
-* products
+* products (pass array of product names)
+* subscribe (pass array of Mailing List IDs)
 * source (hidden field, used internally for reports)
 
 Fields of ``lead-form-compact`` template:
@@ -172,7 +173,8 @@ Fields of ``lead-form-compact`` template:
 * purchase_for_organization
 * purchasing_timeframe
 * company (hidden field, pass company name)
-* products
+* products (pass array of product names)
+* subscribe (pass array of Mailing List IDs)
 * source (hidden field, used internally for reports)
 
 ### Processing Rules
