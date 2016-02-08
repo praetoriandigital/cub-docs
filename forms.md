@@ -17,9 +17,9 @@ and send submitted form data to central Leads database:
        - textarea;
        - hidden input. -->
 
-  <!-- "processing_rule" field is required for all forms.
-       See notes below about Processing Rules. -->
-  <input type="hidden" name="processing_rule" value="{processing_rule_ID}">
+  <!-- "form" field is required for all forms.
+       Get your form ID in Cub admin. -->
+  <input type="hidden" name="form" value="{form-ID}">
 
   <!-- Add a submit button. It can be <input type="submit">, or <button>, or
        <input type="image">. -->
@@ -68,20 +68,25 @@ and send submitted form data to central Leads database:
 </script>
 ```
 
+### Getting your Form ID
+
+To be processed by Cub, all forms must be registered in Cub admin.
+If you don't have an access to Cub admin, please contact our customer support.
 
 ### Form templates
 
-As an alternative for creating form layout from scratch, we have pre-built
-templates for common use-cases which already do this for you. To use a
-template you should specify template name, its parameters and a target HTML
-element for the template to render, like this:
+Forms can have a pre-built templates which you can load on the page.
+Although this is not required, and you can still construct the form
+layout yourself, pre-built templates can be convenient in many cases. 
+See an example below:
 
 ```html
 
 <div id="lead-form-container">
   <!-- Form template will be rendered inside this element,
        replacing it's previous contents.
-       HINT: you can add loader icon here. -->
+       HINT: you can place a loader icon or text here, like this: -->
+  Loading...
 </div>
 
 <script>
@@ -91,10 +96,7 @@ element for the template to render, like this:
       apiKey: '<your-public-API-key>',
       forms: {
         '#lead-form-container': {
-          template: 'lead-form',
-          processing_rule: '<processing-rule-ID>',
-          stylesheet: 'minimal',
-          powered_by: 'PoliceOne',
+          load: '<form-ID>',
           product_options: [
             'Product option 1 (replace with real product name)',
             'Product option 2 (you can add more products here)'
@@ -118,75 +120,18 @@ element for the template to render, like this:
 ```
 
 In the example above, target container is set to ``#lead-form-container`` and
-template name is set to ``lead-form``. At the moment we have 2 pre-built
-templates - ``lead-form`` and ``lead-form-compact``. Common parameters for
-both templates:
+a template for ``<form-ID>`` will be loaded and injected into it. There's also
+an extra parameter defined in the example - ``product_options``, it is passed 
+to the template and the template is rendered with given product options. 
+Possible extra parameters:
 
-* ``processing_rule`` - required, processing rule ID. See
-  [description below](#processing-rules);
-* ``stylesheet`` - optional, name of CSS stylesheet to pre-load for this form.
-  The only supported option for now is ``minimal``. Minimal stylesheet defines
-  the very basic layout and makes the form responsive. You can override
-  any of styles defined by pre-loaded stylesheet in your main site CSS. If
-  you want to completely disable pre-loaded stylesheet, remove this parameter;
-* ``powered_by`` - adds "Powered by" logo. Required for 3rd-party installations.
-  Possible options: ``PoliceOne``, ``FireRescue1``, ``EMS1``,
-  ``CorrectionsOne``, ``Military1``, ``LocalGovU``;
 * ``product_options`` - optional, list of products associated with this form.
   If the list contains only one item, it will be rendered as a hidden field.
   If there are 2 or more items, it will be rendered as a checkbox group, so
   users can choose product(s) in which they are interested;
 * ``<form-field-name>`` - optional, pre-populate form with given value for this
   field. If somehow you already know your customer's name, email or another
-  details, you can provide them as parameters. See field names below:
-
-Fields of ``lead-form`` template:
-
-* first_name
-* last_name
-* email
-* organization_name
-* organization_size
-* member_position
-* zip
-* country
-* state
-* phone
-* purchase_for_organization
-* purchasing_timeframe
-* looking_for
-* looking_for_other
-* company (hidden field, pass company name)
-* products (pass array of product names)
-* subscribe (pass array of Mailing List IDs)
-* source (hidden field, used internally for reports)
-
-Fields of ``lead-form-compact`` template:
-
-* first_name
-* last_name
-* email
-* organization_name
-* organization_size
-* zip
-* phone
-* purchase_for_organization
-* purchasing_timeframe
-* company (hidden field, pass company name)
-* products (pass array of product names)
-* subscribe (pass array of Mailing List IDs)
-* source (hidden field, used internally for reports)
-
-### Processing Rules
-
-Before creating your form, please define a Processing Rule for it in Cub Admin
-first. Processing Rules tell Cub how incoming data should be handled. You can
-define required fields there, add email notifications or add data export
-targets.
-
-Each form must have a field named "processing_rule" containing ID of Processing
-Rule you created for this form. Typically you'll want it to be a hidden field,
-unless you do something very special.
+  details, you can provide them as parameters to the template.
 
 ### Field names
 
@@ -210,9 +155,21 @@ encourage you to follow these naming conventions for pre-defined fields:
 - country
 - zip
 
+**Products**
+- purchase_for_organization (choice: ``Yes``, ``No``, ``Not Sure``)
+- purchasing_timeframe (choice: ``Purchase immediately (ASAP)``, ``Purchase soon (3-6 months)``, ``Purchase later (7-12 months)``, ``Research only at this time``)
+- looking_for (multiple choice: ``Catalog``, ``Pricing``, ``Technical Specs``, ``Dealer Info``)
+- looking_for_other (arbitrary text)
+- company (pass Company name)
+- products (pass array of product names)
+
+**Email subscriptions**
+- subscribe (pass array of Mailing List IDs)
+
 **Organization Data**
 - organization_name
 - organization_size
+- organization_type
 - organization_phone
 - organization_address
 - organization_city
