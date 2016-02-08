@@ -75,10 +75,10 @@ If you don't have an access to Cub admin, please contact our customer support.
 
 ### Form templates
 
-Forms can have a pre-built templates which you can load on the page.
-Although this is not required, and you can still construct the form
-layout yourself, pre-built templates can be convenient in many cases. 
-See an example below:
+Forms can have a pre-built templates which you can load on the page via 
+``load`` parameter. Although this is not required, and you can still 
+construct the form layout yourself, pre-built templates can be convenient 
+in many cases.  See an example below:
 
 ```html
 
