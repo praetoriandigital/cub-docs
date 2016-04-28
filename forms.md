@@ -7,9 +7,11 @@ and send submitted form data to central Leads database:
 
 ```html
 
-<form id="my-lead-form1">
-  <!-- This is a Lead Form. It can contain any number of HTML fields and any
-       extra HTML markup. The following field types are supported:
+<form id="my-lead-form1" action="leads">
+  <!-- This is a Lead Form. It will send submitted data to "leads" API
+       endpoint, as it is defined in its "action" attribute. It can contain 
+       any number of HTML fields and any extra HTML markup. The following 
+       field types are supported:
        - text input;
        - select;
        - checkbox;
@@ -26,7 +28,7 @@ and send submitted form data to central Leads database:
   <button>Submit</button>
 </form>
 
-<form id="my-lead-form2">
+<form id="my-lead-form2" action="leads">
   <!-- This is another Lead Form
        ... -->
 </form>
