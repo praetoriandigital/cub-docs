@@ -1,26 +1,48 @@
-# Cub Widget: Lead Forms
+# Cub Widget: Forms
+
+You can use Cub Widget to send data to Cub API from any number of ``<form>``
+element(s) on your web page. Cub widget will take care of data transport and
+success and errors handling. It is fully customizable, including form layout
+and custom callbacks for submit, success and error events.
 
 ### Code sample
 
-You can tell Cub Widget to connect to any ``<form>`` tag(s) on your web page
-and send submitted form data to central Leads database:
-
 ```html
+<form id="subscriber-form1" action="subscribers">
+  <!-- This is a Newsletter Subscribers form. It will send data to "subscribers"
+       API endpoint, as it is defined in its "action" attribute. You can use it
+       to subscribe or unsubscribe users to/from any mailing list
+       supported by Cub for your site. -->
+  <input name="email">
+  <input type="checkbox" name="subscribe" value="{mailing-list1-ID}" checked>
+      Mailing List 1 (on by default)
+  <input type="checkbox" name="subscribe" value="{mailing-list2-ID}">
+      Mailing List 2
 
-<form id="my-lead-form1" action="leads">
-  <!-- This is a Lead Form. It will send submitted data to "leads" API
-       endpoint, as it is defined in its "action" attribute. It can contain 
-       any number of HTML fields and any extra HTML markup. The following 
-       field types are supported:
-       - text input;
-       - select;
-       - checkbox;
-       - radio buttons;
-       - textarea;
-       - hidden input. -->
+  <button>Submit</button>
+</form>
 
-  <!-- "form" field is required for all forms.
-       Get your form ID in Cub admin. -->
+
+<!--
+This is a Lead Form. It will send submitted data to "leads" API endpoint, as
+it is defined in its "action" attribute. It can contain any number of HTML
+fields and any extra HTML markup. The following field types are supported:
+    - text input;
+    - select;
+    - checkbox;
+    - radio buttons;
+    - textarea;
+    - hidden input.
+-->
+<form id="lead-form1" action="leads">
+  First name: <input name="first_name">
+  Last name: <input name="last_name">
+  Email: <input type="email" name="email">
+
+  <!-- ... add more fields here -->
+
+  <!-- "form" field is required for all Lead Forms.
+       Get your Lead Form ID in Cub admin. -->
   <input type="hidden" name="form" value="{form-ID}">
 
   <!-- Add a submit button. It can be <input type="submit">, or <button>, or
@@ -28,11 +50,12 @@ and send submitted form data to central Leads database:
   <button>Submit</button>
 </form>
 
-<form id="my-lead-form2" action="leads">
-  <!-- This is another Lead Form
-       ... -->
-</form>
 
+<!--
+This is Cub initialization script. It needs to be placed on the page only once,
+no matter how many forms you have. You should place it below last form element
+which needs to be handled by Cub.
+-->
 <script>
   var cubAsyncInit = function(cub) {
     // Configuration parameters
@@ -41,11 +64,13 @@ and send submitted form data to central Leads database:
 
       // forms parameter is an object with CSS selectors as keys
       // and form options (optional) as values. Each CSS selector must
-      // identify a <form> tag:
+      // identify either a <form> tag if the form is defined right on the page,
+      // or a target container for Lead Form templates loaded from Cub API
+      // (see Lead Form templates below):
       forms: {
-        '#my-lead-form1': {},  // no extra options for 1st form
+        '#subscriber-form1': {},  // no extra options for 1st form
 
-        '#my-lead-form2': {    // add custom onSuccess handler for 2nd form
+        '#lead-form1': {    // add custom onSuccess handler for 2nd form
           onSuccess: function(formData, formElement) {
             // Replace standard "Thank you.." alert with a
             // redirect to our custom page:
@@ -70,16 +95,79 @@ and send submitted form data to central Leads database:
 </script>
 ```
 
-### Getting your Form ID
+### Form events and custom handlers
 
-To be processed by Cub, all forms must be registered in Cub admin.
-If you don't have an access to Cub admin, please contact our customer support.
+Cub Widget adds an event listener for "submit" event of your forms and replaces
+standard HTML form submit behavior. When a form is submitted, widget does the
+following:
 
-### Form templates
+  1. Sends form data to Cub API;
+  2. If you provided a custom onSubmit callback for this form in options,
+     widget will call your callback with two parameters, first is an object
+     with submitted form data, and second is form DOM element:
 
-Forms can have a pre-built templates which you can load on the page via 
-``load`` parameter. Although this is not required, and you can still 
-construct the form layout yourself, pre-built templates can be convenient 
+     ```js
+     onSubmit(formData, formElement);
+     ```
+
+     If you didn't provided a custom callback, widget will execute a standard
+     onSubmit handler, which adds "processing" class to submitted ``<form>``.
+     You can use it to add a visual indication that form is being processed.
+  3. When response from Cub server is received, it can be either success or error.
+     Before calling actions for success or error, widget will remove "processing"
+     class from a ``<form>`` tag (unless you've replaced onSubmit handler with
+     your own). Next action depends on server response:
+      * **Success:** widget checks if you provided a custom onSuccess callback,
+        and if you did, your callback will be called with formData and formElement
+        parameters:
+
+        ```js
+        onSuccess(formData, formElement);
+        ```
+
+        If custom ``onSuccess`` handler wasn't provided, widget shows a "Thank you"
+        message and clears the form.
+      * **Error:** if you provided a custom onError callback it will be called
+        with the following parameters:
+
+        ```js
+        onError(topError, fieldErrors, formData, formElement);
+        ```
+
+        ``topError`` is a string containing top-level error message (optional).
+        Top-level error is an error which is not related to a particular field.
+        For example, this could be a server connection error, or an error which
+        is related to validation of multiple fields. ``fieldErrors`` is an
+        object with field names as keys and error messages as values. ``formData``
+        and ``formElement`` mean the same as for other callbacks, these are
+        submitted form data and form DOM element respectively.
+
+        If you didn't provide custom ``onError`` handler, widget will try to
+        locate pre-defined placeholders for form errors and paste error messages
+        into them. For top-level form error it will look for
+        ``<span class="cub-form-error">`` inside ``<form>`` tag.
+        For field-level errors it looks for
+        ``<span class="cub-field-error" data-field="{field_name}">`` for each
+        field.
+
+### Subscriber Forms: getting Mailing List IDs
+
+You can get Mailing List IDs in Cub admin. If you don't have an access to Cub
+admin, please contact our customer support. Please note that Subscriber Form
+can only manage subscriptions to mailing lists which are explicitly linked to
+your site.
+
+### Lead Forms: getting your Form ID
+
+For Leads to be processed by Cub, all Lead Forms must be registered first in
+Cub admin. If you don't have an access to Cub admin, please contact our
+customer support.
+
+### Lead Form templates
+
+Forms can have a pre-built templates which you can load on the page via
+``load`` parameter. Although this is not required, and you can still
+construct the form layout yourself, pre-built templates can be convenient
 in many cases.  See an example below:
 
 ```html
@@ -123,8 +211,8 @@ in many cases.  See an example below:
 
 In the example above, target container is set to ``#lead-form-container`` and
 a template for ``<form-ID>`` will be loaded and injected into it. There's also
-an extra parameter defined in the example - ``product_options``, it is passed 
-to the template and the template is rendered with given product options. 
+an extra parameter defined in the example - ``product_options``, it is passed
+to the template and the template is rendered with given product options.
 Possible extra parameters:
 
 * ``product_options`` - optional, list of products associated with this form.
@@ -135,7 +223,7 @@ Possible extra parameters:
   field. If somehow you already know your customer's name, email or another
   details, you can provide them as parameters to the template.
 
-### Field names
+### Leads: Field names
 
 The widget sends to Cub all HTML fields which you provide in the ``<form>``
 tag. This is pretty much like standard ``<form>`` submit behavior, but the
@@ -185,58 +273,3 @@ encourage you to follow these naming conventions for pre-defined fields:
 **Miscellaneous**
 - comment
 - source
-
-### Form events and custom handlers
-
-Cub Widget adds an event listener for "submit" event of your forms and replaces
-standard form submit behavior. When a form is submitted, widget does the
-following:
-
-  1. Sends form data to Cub;
-  2. If you provided a custom onSubmit callback for this form in options,
-     widget will call your callback with two parameters, first is an object
-     with submitted form data, and second is form DOM element:
-
-     ```js
-     onSubmit(formData, formElement);
-     ```
-
-     If you didn't provided a custom callback, widget will execute a standard
-     onSubmit handler, which adds "processing" class to submitted ``<form>``.
-     You can use it to add a visual indication that form is being processed.
-  3. When response from Cub server is received, it can be either success or error.
-     Before calling actions for success or error, widget will remove "processing"
-     class from a ``<form>`` tag (unless you've replaced onSubmit handler with
-     your own). Next action depends on server response:
-      * **Success:** widget checks if you provided a custom onSuccess callback,
-        and if you did, your callback will be called with formData and formElement
-        parameters:
-
-        ```js
-        onSuccess(formData, formElement);
-        ```
-
-        If custom ``onSuccess`` handler wasn't provided, widget shows a "Thank you"
-        message and clears the form.
-      * **Error:** if you provided a custom onError callback it will be called
-        with the following parameters:
-
-        ```js
-        onError(topError, fieldErrors, formData, formElement);
-        ```
-
-        ``topError`` is a string containing top-level error message (optional).
-        Top-level error is an error which is not related to a particular field.
-        For example, this could be a server connection error, or an error which
-        is related to validation of multiple fields. ``fieldErrors`` is an
-        object with field names as keys and error messages as values. ``formData``
-        and ``formElement`` mean the same as for other callbacks, these are
-        submitted form data and form DOM element respectively.
-
-        If you didn't provide custom ``onError`` handler, widget will try to
-        locate pre-defined placeholders for form errors and paste error messages
-        into them. For top-level form error it will look for
-        ``<span class="cub-form-error">`` inside ``<form>`` tag.
-        For field-level errors it looks for
-        ``<span class="cub-field-error" data-field="{field_name}">`` for each
-        field.

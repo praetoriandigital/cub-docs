@@ -49,7 +49,7 @@ register your application in Cub Admin and get an API key.
 Please follow these links for detailed usage instructions:
 
 * [Users Login and Registration](https://github.com/praetoriandigital/cub-docs/blob/master/registration.md)
-* [Lead Forms](https://github.com/praetoriandigital/cub-docs/blob/master/forms.md)
+* [Newsletter Subscription Forms and Lead Forms](https://github.com/praetoriandigital/cub-docs/blob/master/forms.md)
 
 ### Browser compatibility
 
@@ -91,6 +91,7 @@ version you should update it yourself as new versions come out.
 
 * 0.12.x, April 24, 2016
   - added Purchasing Roles to 2nd Registration step and My Profile
+  - introducing Newsletter Subscription forms
 * 0.11.x, April 8, 2016
   - Organizations search major refactoring and UI improvements
   - added Employees dropdown to Organization Add Form
