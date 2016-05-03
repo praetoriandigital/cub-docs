@@ -90,7 +90,7 @@ version you should update it yourself as new versions come out.
 ### Changes
 
 * 0.12.x, April 24, 2016
-  - added Purchasing Roles to 2nd Registration step and My Profile
+  - added Purchasing Roles to My Profile
   - introducing Newsletter Subscription forms
 * 0.11.x, April 8, 2016
   - Organizations search major refactoring and UI improvements
