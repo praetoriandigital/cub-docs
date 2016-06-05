@@ -79,19 +79,30 @@ available:
    recommended if you use Users Login and Registration and applied custom
    styling to it:
 
-   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.10.x.js>
+   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.12.x.js>
 
 Second option allows you to freeze any updates to widget HTML markup, its API
 and documented behaviour, however you will still receive bugfixes as patch
 versions until major or minor version changes. Please note that we ship
 bugfixes for latest widget version only, so if you're using fixed widget
-version you should update it yourself as new versions come out.
+version you should update it yourself as new versions become available.
+
+### Please use latest widget version
+
+We strongly encourage you to use latest widget version and upgrade 
+to newer version as soon as it becomes available. Technical  support and
+bugfixes are provided for latest version only. Versions marked below as
+'outdated' are not guaranteed to work at all.
 
 ### Changes
 
 * 0.12.x, April 24, 2016
   - added Purchasing Roles to My Profile
   - introducing Newsletter Subscription forms
+  - upgrades to registration step 2: renamed tabs, added optional Vendor tab
+
+**Outdated versions:**
+
 * 0.11.x, April 8, 2016
   - Organizations search major refactoring and UI improvements
   - added Employees dropdown to Organization Add Form
