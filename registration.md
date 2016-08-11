@@ -1,6 +1,4 @@
-# Cub Widget: Users Login and Registration
-
-### Installation
+## Users Login and Registration
 
 Add the following HTML code to your site:
 
@@ -38,7 +36,7 @@ Add the following HTML code to your site:
 </script>
 ```
 
-### URL configuration
+## URL configuration
 
 Contents of cub-widget-app tag depends on URL. By default, widget uses
 hash URLs, like #login, #registration, etc. Transitions between such URLs
@@ -47,7 +45,7 @@ widget app elements will remain unchanged. If you'd like to place widget
 forms on different pages of your site, please login to Cub Admin and
 configure URLs for your site in Widget Configuration section.
 
-### Custom styling
+## Custom styling
 
 Widget adds some very basic CSS styles for its elements, but in general it
 leaves styling to you. Please feel free to define or override any styles for

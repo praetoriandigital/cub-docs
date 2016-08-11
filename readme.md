@@ -13,7 +13,7 @@ directly from browser via Cub API. Basic widget integration requires no server
 programming, so you can add it literaly on any site with minimal efforts.
 If you need more sophisticated integration options - we have them, too.
 
-### How it works
+## How it works
 
 Widget is loaded on a page with a piece of JavaScript, like this (example):
 
@@ -39,23 +39,23 @@ Widget is loaded on a page with a piece of JavaScript, like this (example):
 </script>
 ```
 
-When loaded, widget adds an interaction to the web page, either by rendering
-extra interactive elements on it, like Login and Registration forms, or by
-connecting to your existing HTML markup, like it does for Lead Forms. Widget
-takes configuration parameters via ``cub.start()`` method. Required parameter
-for all actions is ``apiKey``. Before you can use the widget, you have to
-register your application in Cub Admin and get an API key.
+When loaded, widget adds an interaction to the web page by rendering its
+components in target DOM elements which you define. Widget takes configuration 
+parameters via ``cub.start()`` method. Required parameter for all actions is 
+``apiKey``. Before you can use the widget, you have to register your 
+application in Cub Admin and get an API key.
 
 Please follow these links for detailed usage instructions:
 
 * [Users Login and Registration](https://github.com/praetoriandigital/cub-docs/blob/master/registration.md)
-* [Newsletter Subscription Forms and Lead Forms](https://github.com/praetoriandigital/cub-docs/blob/master/forms.md)
+* [Newsletter Subscription Form](https://github.com/praetoriandigital/cub-docs/blob/master/newsletter-form.md)
+* [Lead Forms](https://github.com/praetoriandigital/cub-docs/blob/master/lead-forms.md)
 
-### Browser compatibility
+## Browser compatibility
 
 Tested vs. IE9+, Chrome, Firefox, Safari, Mobile Safari and Android Browser.
 
-### Widget versioning
+## Widget versioning
 
 Widget versions follow [Semantic Versioning](http://semver.org). You can
 check current version in browser console as ``cub.version``. Changes in public
@@ -84,14 +84,14 @@ versions until major or minor version changes. Please note that we ship
 bugfixes for latest widget version only, so if you're using fixed widget
 version you should update it yourself as new versions become available.
 
-### Please use latest widget version
+## Please use latest widget version
 
 We strongly encourage you to use latest widget version and upgrade 
 to newer version as soon as it becomes available. Technical  support and
 bugfixes are provided for latest version only. Versions marked below as
 'outdated' are not guaranteed to work at all.
 
-### Changes
+## Changes
 
 * 0.13.x, August 5, 2016
   - major HTML markup and styles refactoring
@@ -129,7 +129,7 @@ bugfixes are provided for latest version only. Versions marked below as
 * 0.7.x - load site configuration from API
 * 0.6.x - introducing localStorage cache
 
-### Troubleshoouting
+## Troubleshoouting
 
 Cub Widget makes its best to be developer-friendly and reports its errors and
 warnings into your browser console. If something goes wrong, please check
