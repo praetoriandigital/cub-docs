@@ -42,7 +42,7 @@ with a redirect to your custom page using ``onSuccess`` callback.
     - formData - object with submitted form fields;
     - formElement - DOM element of <form> being submitted.
 
- * **onSuccess(formData, formElement)** - called when form was submitted 
+* **onSuccess(formData, formElement)** - called when form was submitted 
    successfully. If you provide this callback, it substitutes standard success 
    behavior. Parameters:
     - formData - object with submitted form fields;
