@@ -95,7 +95,6 @@ bugfixes are provided for latest version only. Versions marked below as
 
 * 0.13.x, August 5, 2016
   - major HTML markup and styles refactoring
-  - added support for Bootstrap 3 styles
   - Forms rendering moved to client side, new Forms API introduced
   - dropped support for IE8
 * 0.12.x, April 24, 2016
