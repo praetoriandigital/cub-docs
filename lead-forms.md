@@ -67,6 +67,43 @@ like this:
     ...
 ```
 
+## Email notifications
+
+Email notification recipients can be configured either in Cub admin in Lead Form
+properties, or extracted from FrontContent Campaigns, or both. Cub automatically 
+takes care of avoiding duplicated notifications, so even if the same recipient 
+email is mentioned twice for a lead (for example, in Cub and in FC Campaign) - 
+that's fine, Cub will understand that this is the same recipient, and only one 
+notification email will be sent. 
+
+If you'd like to link a lead to a FC Campaign, please provide ``campaign`` 
+parameter in form initialization data the following format:
+
+```
+campaign: '<fc-site>:<campaign-ID>'
+```
+ 
+in the above:
+
+* ``<fc-site>`` - can be one of ``p1``, ``c1``, ``fr1``, ``ems1``, ``h1`` - 
+  in which Site should Cub look for Campaigns container;
+* ``<campaign-ID>`` - primary key (content_id) of Campaign record in that 
+  container.
+  
+Example:
+
+```js
+    ...
+    forms: {
+      '#lead-form1': {
+        load: '<lead-form-ID>',
+        // Link to Campaign #42 in P1:
+        campaign: 'p1:42',
+        ...
+      }
+    }
+    ...
+```
 
 ## Form events
 
