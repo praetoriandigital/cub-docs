@@ -77,7 +77,7 @@ that's fine, Cub will understand that this is the same recipient, and only one
 notification email will be sent. 
 
 If you'd like to link a lead to a FC Campaign, please provide ``campaign`` 
-parameter in form initialization data the following format:
+parameter in form initialization data in the following format:
 
 ```
 campaign: '<fc-site>:<campaign-ID>'
