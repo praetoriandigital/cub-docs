@@ -83,7 +83,7 @@ parameter in form initialization data in the following format:
 campaign: '<fc-site>:<campaign-ID>'
 ```
  
-...where
+... where
 
 * ``<fc-site>`` - can be one of ``p1``, ``c1``, ``fr1``, ``ems1``, ``h1`` - 
   in which FC Site Cub should look for Campaigns container;
