@@ -83,10 +83,10 @@ parameter in form initialization data in the following format:
 campaign: '<fc-site>:<campaign-ID>'
 ```
  
-in the above:
+...where
 
 * ``<fc-site>`` - can be one of ``p1``, ``c1``, ``fr1``, ``ems1``, ``h1`` - 
-  in which Site should Cub look for Campaigns container;
+  in which FC Site Cub should look for Campaigns container;
 * ``<campaign-ID>`` - primary key (content_id) of Campaign record in that 
   container.
   
