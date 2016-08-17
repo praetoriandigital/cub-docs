@@ -70,25 +70,27 @@ like this:
 ## Email notifications
 
 Email notification recipients can be configured either in Cub admin in Lead Form
-properties, or extracted from FrontContent Campaigns, or both. Cub automatically 
-takes care of avoiding duplicated notifications, so even if the same recipient 
-email is mentioned twice for a lead (for example, in Cub and in FC Campaign) - 
-that's fine, Cub will understand that this is the same recipient, and only one 
-notification email will be sent. 
+properties, or extracted from FrontContent containers, or both. Cub 
+automatically takes care of avoiding duplicated notifications, so even if the 
+same recipient email is mentioned twice for a lead (for example, if the same 
+person is listed both in Cub and in FC container) - that's fine, Cub will 
+understand that this is the same recipient, and only one notification email will 
+be sent. 
 
-If you'd like to link a lead to a FC Campaign, please provide ``campaign`` 
-parameter in form initialization data in the following format:
+If you'd like to pull notifications for a lead from a FC container, please 
+provide ``notifications`` parameter in form initialization data in the following 
+format:
 
 ```
-campaign: '<fc-site>:<campaign-ID>'
+notifications: '<fc-site>:<container>:<content-ID>'
 ```
  
 ... where
 
 * ``<fc-site>`` - can be one of ``p1``, ``c1``, ``fr1``, ``ems1``, ``h1`` - 
-  in which FC Site Cub should look for Campaigns container;
-* ``<campaign-ID>`` - primary key (content_id) of Campaign record in that 
-  container.
+  in which FC Site Cub should look for a container;
+* ``<container>`` - the only supported value for now is ``campaign``;
+* ``<content-ID>`` - primary key (content_id) of a record in that container.
   
 Example:
 
@@ -97,8 +99,8 @@ Example:
     forms: {
       '#lead-form1': {
         load: '<lead-form-ID>',
-        // Link to Campaign #42 in P1:
-        campaign: 'p1:42',
+        // Pull notifications from Campaign #42 in P1:
+        notifications: 'p1:campaign:42',
         ...
       }
     }
