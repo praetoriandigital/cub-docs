@@ -1,12 +1,13 @@
 # Cub Widget
 
 Cub Widget is a lightweight JavaScript application which can be installed
-on any site. It has two main features:
+on any site. Key features:
 
-* Add Users Login and Registration to your site and make it connected to 1.8m
-  users of united users database of Praetorian Digital sites network;
-* Collect data from various Lead Forms and send them to the central Praetorian
-  Digital Leads database for processing.
+* Users Login and Registration for your site, connected to 1.8m users 
+  database of Praetorian Digital sites network;
+* Newsletter Subscription Forms for dozens of newsletters for first 
+  responders;
+* Flexible Lead Forms with centralized processing and data export features.
 
 The widget is implemented in pure JavaScript, and talks to a central database
 directly from browser via Cub API. Basic widget integration requires no server
