@@ -77,7 +77,7 @@ available:
    recommended if you use Users Login and Registration and applied custom
    styling to it:
 
-   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.13.x.js>
+   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.14.x.js>
 
 Second option allows you to freeze any updates to widget HTML markup, its API
 and documented behaviour, however you will still receive bugfixes as patch
@@ -94,6 +94,8 @@ bugfixes are provided for latest version only. Versions marked below as
 
 ## Changes
 
+* 0.14.x, September 27, 2016
+  - introducing Notifications for My Profile page
 * 0.13.x, August 5, 2016
   - major HTML markup and styles refactoring
   - Forms rendering moved to client side, new Forms API introduced
