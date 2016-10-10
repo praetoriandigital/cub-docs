@@ -96,6 +96,10 @@ bugfixes are provided for latest version only. Versions marked below as
 
 * 0.14.x, September 27, 2016
   - introducing Notifications for My Profile page
+  - migrated to new verification request api. member->(user, organization)
+
+**Outdated versions:**
+
 * 0.13.x, August 5, 2016
   - major HTML markup and styles refactoring
   - Forms rendering moved to client side, new Forms API introduced
@@ -105,9 +109,6 @@ bugfixes are provided for latest version only. Versions marked below as
   - added Purchasing Roles to My Profile
   - introducing Newsletter Subscription forms
   - upgrades to registration step 2: renamed tabs, added optional Vendor tab
-
-**Outdated versions:**
-
 * 0.11.x, April 8, 2016
   - Organizations search major refactoring and UI improvements
   - added Employees dropdown to Organization Add Form
