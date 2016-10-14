@@ -61,7 +61,9 @@ needs to be handled by Cub. Configure your forms in 'forms' parameter below:
                     ['mlt_u8f14e45fceea167', 'P1 Breaking News Alerts']
                   ]
                 }
-              ]
+              ],
+              // Title for Submit button
+              submit: 'Subscribe'
             }
           ]
         }
