@@ -1,4 +1,6 @@
-# Cub Widget
+<img src="cub-logo.png">
+
+# Cub™ Widget
 
 Cub Widget is a lightweight JavaScript application which can be installed
 on any site. Key features:
