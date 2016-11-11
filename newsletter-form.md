@@ -2,87 +2,92 @@
 
 Code sample:
 ```html
-<div id="newsletter-form1">
-  <!-- Newsletter Form will be rendered inside this element, 
-       replacing it's previous contents.
-       HINT: you can place a loader icon or text here, like this: -->
-  Loading...
-</div>
+<body>
+   <script>
+     // Load Cub widget asynchronously. Put this as higher as possible so 
+     // widget will load faster.
+     (function(){
+       if (document.getElementById("cub-widget-script")) {return;}
+       var firstScript = document.getElementsByTagName("script")[0];
+       var cubJs = document.createElement("script");
+       cubJs.id = "cub-widget-script";
+       // See notes about widget versioning
+       cubJs.src = "//cub-praetorian.netdna-ssl.com/cub-widget.js";
+       firstScript.parentNode.insertBefore(cubJs, firstScript);
+     }());
+  </script>
+  
+  <div id="newsletter-form1">
+    <!-- Newsletter Form will be rendered inside this element, 
+         replacing it's previous contents.
+         HINT: you can place a loader icon or text here, like this: -->
+    Loading...
+  </div>
 
-<!--
-Cub initialization script needs to be placed on the page only once, no matter 
-how many forms do you have. You should place it below last form element which 
-needs to be handled by Cub. Configure your forms in 'forms' parameter below:
--->
-<script>
-  var cubAsyncInit = function(cub) {
-    // Configuration parameters
-    cub.start({
-      apiKey: '<your-public-API-key>',
+  <!--
+  Cub initialization script needs to be placed on the page only once, no matter 
+  how many forms do you have. You should place it below last form element which 
+  needs to be handled by Cub. Configure your forms in 'forms' parameter below:
+  -->
+  <script>
+    var cubAsyncInit = function(cub) {
+      // Configuration parameters
+      cub.start({
+        apiKey: '<your-public-API-key>',
 
-      // 'forms' parameter is an object with CSS selectors as keys and form 
-      // options as values. CSS selectors identify parent containers for 
-      // forms to be rendered:
-      forms: {
-        '#newsletter-form1': {
-          action: 'subscribers',
-          fieldsets: [
-            {
-              name: 'responsive-column',
-              fields: [
-                // First Name - optional
-                {
-                  name: 'first_name',
-                  label: 'First Name',
-                  type: 'text'
-                },
-                // Last Name - optional
-                {
-                  name: 'last_name',
-                  label: 'Last Name',
-                  type: 'text'
-                },
-                // Email - required
-                {
-                  name: 'email',
-                  label: 'Email',
-                  type: 'text',
-                  required: true
-                },
-                // Newsletter subscription options - required. 
-                // You can find mailing list IDs and names in Cub admin.
-                // As an alternative to checkboxes you can use hidden field 
-                // for this, see example below.
-                {
-                  name: 'subscribe',
-                  type: 'checkboxgroup',
-                  options: [
-                    ['mlt_uc4ca4238a0b9238', 'PoliceOne Member Newsletter'],
-                    ['mlt_u8f14e45fceea167', 'P1 Breaking News Alerts']
-                  ]
-                }
-              ],
-              // Title for Submit button
-              submit: 'Subscribe'
-            }
-          ]
+        // 'forms' parameter is an object with CSS selectors as keys and form 
+        // options as values. CSS selectors identify parent containers for 
+        // forms to be rendered:
+        forms: {
+          '#newsletter-form1': {
+            action: 'subscribers',
+            fieldsets: [
+              {
+                name: 'responsive-column',
+                fields: [
+                  // First Name - optional
+                  {
+                    name: 'first_name',
+                    label: 'First Name',
+                    type: 'text'
+                  },
+                  // Last Name - optional
+                  {
+                    name: 'last_name',
+                    label: 'Last Name',
+                    type: 'text'
+                  },
+                  // Email - required
+                  {
+                    name: 'email',
+                    label: 'Email',
+                    type: 'text',
+                    required: true
+                  },
+                  // Newsletter subscription options - required. 
+                  // You can find mailing list IDs and names in Cub admin.
+                  // As an alternative to checkboxes you can use hidden field 
+                  // for this, see example below.
+                  {
+                    name: 'subscribe',
+                    type: 'checkboxgroup',
+                    options: [
+                      ['mlt_uc4ca4238a0b9238', 'PoliceOne Member Newsletter'],
+                      ['mlt_u8f14e45fceea167', 'P1 Breaking News Alerts']
+                    ]
+                  }
+                ],
+                // Title for Submit button
+                submit: 'Subscribe'
+              }
+            ]
+          }
         }
-      }
 
-    });
-  };
-
-  // Load Cub widget asynchronously
-  (function(){
-    if (document.getElementById("cub-widget-script")) {return;}
-    var firstScript = document.getElementsByTagName("script")[0];
-    var cubJs = document.createElement("script");
-    cubJs.id = "cub-widget-script";
-    // See notes about widget versioning
-    cubJs.src = "//cub-praetorian.netdna-ssl.com/cub-widget.js";
-    firstScript.parentNode.insertBefore(cubJs, firstScript);
-  }());
-</script>
+      });
+    };
+  </script>
+</body>
 ```
 
 ## Providing initial data
