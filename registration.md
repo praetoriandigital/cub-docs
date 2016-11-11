@@ -3,37 +3,41 @@
 Add the following HTML code to your site:
 
 ```html
-<!-- User menu will be rendered inside this element. You can place it anywhere
-     on the page. This element should be present on all site pages. -->
-<div id="cub-widget-menu"></div>
+<body>
+   <script>
+     // Load Cub widget asynchronously. Put this as higher as possible so 
+     // widget will load faster.
+     (function(){
+       if (document.getElementById("cub-widget-script")) {return;}
+       var firstScript = document.getElementsByTagName("script")[0];
+       var cubJs = document.createElement("script");
+       cubJs.id = "cub-widget-script";
+       // See notes about widget versioning
+       cubJs.src = "//cub-praetorian.netdna-ssl.com/cub-widget.js";
+       firstScript.parentNode.insertBefore(cubJs, firstScript);
+     }());
+  </script>
+  <!-- User menu will be rendered inside this element. You can place it anywhere
+       on the page. This element should be present on all site pages. -->
+  <div id="cub-widget-menu"></div>
 
-<!-- Login, Registration, Reset Password, My Profile,  My Subscriptions,
-     and other widget forms will be rendered inside this element. You can
-     place it anywhere on the page. It must be present on those pages where
-     you expect a widget form to appear. -->
-<div id="cub-widget-app"></div>
-
-<!-- Cub widget initialization script.
-     Important: place it below cub-widget-menu and cub-widget-app tags. -->
-<script>
-  var cubAsyncInit = function(cub) {
-    // Configuration parameters
-    cub.start({
-      apiKey: '<your-public-API-key>'
-    });
-  };
-
-  // Load Cub widget asynchronously
-  (function(){
-    if (document.getElementById("cub-widget-script")) {return;}
-    var firstScript = document.getElementsByTagName("script")[0];
-    var cubJs = document.createElement("script");
-    cubJs.id = "cub-widget-script";
-    // See notes about widget versioning
-    cubJs.src = "//cub-praetorian.netdna-ssl.com/cub-widget.js";
-    firstScript.parentNode.insertBefore(cubJs, firstScript);
-  }());
-</script>
+  <!-- Login, Registration, Reset Password, My Profile,  My Subscriptions,
+       and other widget forms will be rendered inside this element. You can
+       place it anywhere on the page. It must be present on those pages where
+       you expect a widget form to appear. -->
+  <div id="cub-widget-app"></div>
+    
+    <!-- Cub widget initialization script.
+         Important: place it below cub-widget-menu and cub-widget-app tags. -->
+  <script>
+    var cubAsyncInit = function(cub) {
+      // Configuration parameters
+      cub.start({
+        apiKey: '<your-public-API-key>'
+      });
+    };
+  </script>
+</body>
 ```
 
 ## URL configuration
