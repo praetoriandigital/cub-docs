@@ -98,7 +98,8 @@ bugfixes are provided for latest version only. Versions marked below as
 
 * 0.14.x, September 27, 2016
   - introducing Notifications for My Profile page
-  - migrated to new verification request api. member->(user, organization)
+  - backwards-incompatible changes in Verification Requests API
+  - introducing eCommerce features - paid Plans for Sites, Billing page
 
 **Outdated versions:**
 
