@@ -99,7 +99,16 @@ bugfixes are provided for latest version only. Versions marked below as
 * 0.14.x, September 27, 2016
   - introducing Notifications for My Profile page
   - backwards-incompatible changes in Verification Requests API
-  - introducing eCommerce features - paid Plans for Sites, Billing page
+  - introducing Paid Plans for Sites: Sign up for a Plan workflow, 
+    Billing page, support for Plans for Verified Users
+  - introducing Order Payment page (for one-time purchases)
+  - 'Register' menu item on Invitation page now points to the same page
+  - Cub API wrapper exposed to public - you can now use ``cub.api`` in
+    browser
+  - updated ToS (now includes Paid Plan Subscriptions)
+  - updated Verification Requests - added Notes
+  - widget Forms now support absolute API URLs in 'action' parameter,
+    so they can be used with external APIs, not only Cub API
 
 **Outdated versions:**
 
