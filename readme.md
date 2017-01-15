@@ -79,7 +79,7 @@ available:
    recommended if you use Users Login and Registration and applied custom
    styling to it:
 
-   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.14.x.js>
+   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.15.x.js>
 
 Second option allows you to freeze any updates to widget HTML markup, its API
 and documented behaviour, however you will still receive bugfixes as patch
@@ -95,6 +95,12 @@ bugfixes are provided for latest version only. Versions marked below as
 'outdated' are not guaranteed to work at all.
 
 ## Changes
+
+* 0.15.x, January 14, 2017
+  - introducing 'Keep me signed in' checkbox on Login form
+  - introducing one-click payments for Orders with credit cards which we 
+    already have on file
+  - ACH is now supported as a payment method for Orders
 
 * 0.14.x, September 27, 2016
   - introducing Notifications for My Profile page
