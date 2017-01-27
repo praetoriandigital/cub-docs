@@ -101,6 +101,9 @@ bugfixes are provided for latest version only. Versions marked below as
   - introducing one-click payments for Orders with credit cards which we 
     already have on file
   - ACH is now supported as a payment method for Orders
+  - new cross-domain API transport: instead of JSONP we now use iframe + 
+    postMessage. Benefits - it supports large POST requests, better 
+    connection errors and timeouts handling.
 
 * 0.14.x, September 27, 2016
   - introducing Notifications for My Profile page
