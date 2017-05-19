@@ -104,7 +104,10 @@ bugfixes are provided for latest version only. Versions marked below as
   - new cross-domain API transport: instead of JSONP we now use iframe + 
     postMessage. Benefits - it supports large POST requests, better 
     connection errors and timeouts handling.
-  - Fixed missed required validation for State and Position fields.  
+  - Fixed missed required validation for State and Position fields.
+  - prevented re-submission for user forms
+  - added 'combobox' field type for custom lead forms
+  - initial support for user authentication with social network accounts
 
 * 0.14.x, September 27, 2016
   - introducing Notifications for My Profile page
