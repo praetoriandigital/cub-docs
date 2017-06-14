@@ -4,7 +4,7 @@ Code sample:
 ```html
 <body>
    <script>
-     // Load Cub widget asynchronously. Put this as higher as possible so 
+     // Load Cub widget asynchronously. Put this as higher as possible so
      // widget will load faster.
      (function(){
        if (document.getElementById("cub-widget-script")) {return;}
@@ -16,17 +16,17 @@ Code sample:
        firstScript.parentNode.insertBefore(cubJs, firstScript);
      }());
   </script>
-  
+
   <div id="newsletter-form1">
-    <!-- Newsletter Form will be rendered inside this element, 
+    <!-- Newsletter Form will be rendered inside this element,
          replacing it's previous contents.
          HINT: you can place a loader icon or text here, like this: -->
     Loading...
   </div>
 
   <!--
-  Cub initialization script needs to be placed on the page only once, no matter 
-  how many forms do you have. You should place it below last form element which 
+  Cub initialization script needs to be placed on the page only once, no matter
+  how many forms do you have. You should place it below last form element which
   needs to be handled by Cub. Configure your forms in 'forms' parameter below:
   -->
   <script>
@@ -35,15 +35,19 @@ Code sample:
       cub.start({
         apiKey: '<your-public-API-key>',
 
-        // 'forms' parameter is an object with CSS selectors as keys and form 
-        // options as values. CSS selectors identify parent containers for 
+        // 'forms' parameter is an object with CSS selectors as keys and form
+        // options as values. CSS selectors identify parent containers for
         // forms to be rendered:
         forms: {
           '#newsletter-form1': {
             action: 'subscribers',
+            // The value when a multi-column form layout transforms into a single column (in px)
+            responsiveBreakpoint: 700,
             fieldsets: [
               {
                 name: 'responsive-column',
+                // The width for a fieldset layout column (in percents)
+                columnWidth: 100,
                 fields: [
                   // First Name - optional
                   {
@@ -64,9 +68,9 @@ Code sample:
                     type: 'text',
                     required: true
                   },
-                  // Newsletter subscription options - required. 
+                  // Newsletter subscription options - required.
                   // You can find mailing list IDs and names in Cub admin.
-                  // As an alternative to checkboxes you can use hidden field 
+                  // As an alternative to checkboxes you can use hidden field
                   // for this, see example below.
                   {
                     name: 'subscribe',
@@ -77,6 +81,8 @@ Code sample:
                     ]
                   }
                 ],
+                // The width for a Submit button layout column (in percents)
+                submitColumnWidth: 100,
                 // Title for Submit button
                 submit: 'Subscribe'
               }
@@ -91,10 +97,10 @@ Code sample:
 ```
 
 ## Providing initial data
- 
-If on your site you're using Cub widget for registration, First Name and Last 
+
+If on your site you're using Cub widget for registration, First Name and Last
 Name (if present) and Email fields will be pre-populated for logged-in users. Or, you
-can provide initial values for known users yourself via 'value' parameter, like 
+can provide initial values for known users yourself via 'value' parameter, like
 this:
 
 ```js
@@ -108,9 +114,9 @@ this:
     ...
 ```
 
-If you'd like newsletter checkboxes to be checked on by default, provide value 
+If you'd like newsletter checkboxes to be checked on by default, provide value
 for 'subscribe' field as an array:
- 
+
 ```js
     ...
     {
@@ -127,9 +133,9 @@ for 'subscribe' field as an array:
 
 ## Hiding newsletter checkboxes
 
-Sometimes you may want to hide newsletter checkboxes. This can be done by 
+Sometimes you may want to hide newsletter checkboxes. This can be done by
 replacing checkboxes with hidden field, like this:
-  
+
 ```js
     ...
     {
@@ -139,9 +145,9 @@ replacing checkboxes with hidden field, like this:
     },
     ...
 ```
-  
+
 
 ## Form events
 
-Newsletter Subscription Form supports the same events and custom handlers as 
+Newsletter Subscription Form supports the same events and custom handlers as
 Lead Forms, see [form events](form-events.md) for details.
