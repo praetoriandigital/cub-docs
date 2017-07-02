@@ -96,6 +96,12 @@ bugfixes are provided for latest version only. Versions marked below as
 
 ## Changes
 
+* 0.16.x, June 24, 2017
+  - 'Add member' from organization management now points to /members/ endpoint and 
+    creates user with member if it doesn't exist (instead of creating Invitation).
+  - 'Resend' and 'Revoke' buttons now both work for newly created users and for old-style
+    invitations.
+
 * 0.15.x, January 14, 2017
   - introducing 'Keep me signed in' checkbox on Login form
   - introducing one-click payments for Orders with credit cards which we 
