@@ -101,6 +101,7 @@ bugfixes are provided for latest version only. Versions marked below as
     creates user with member if it doesn't exist (instead of creating Invitation).
   - 'Resend' and 'Revoke' buttons now both work for newly created users and for old-style
     invitations.
+  - 'Invited members' tab shows both old invitations and newly created users.
 
 * 0.15.x, January 14, 2017
   - introducing 'Keep me signed in' checkbox on Login form
