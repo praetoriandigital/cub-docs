@@ -102,6 +102,8 @@ bugfixes are provided for latest version only. Versions marked below as
   - 'Resend' and 'Revoke' buttons now both work for newly created users and for old-style
     invitations.
   - 'Invited members' tab shows both old invitations and newly created users.
+  - Fixed: postal_code was not saving on organization creation on Profile page
+    (My Expirience section)
 
 * 0.15.x, January 14, 2017
   - introducing 'Keep me signed in' checkbox on Login form
