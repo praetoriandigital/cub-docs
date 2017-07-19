@@ -5,9 +5,9 @@
 Cub Widget is a lightweight JavaScript application which can be installed
 on any site. Key features:
 
-* Users Login and Registration for your site, connected to 1.8m users 
+* Users Login and Registration for your site, connected to 1.8m users
   database of Praetorian Digital sites network;
-* Newsletter Subscription Forms for dozens of newsletters for first 
+* Newsletter Subscription Forms for dozens of newsletters for first
   responders;
 * Flexible Lead Forms with centralized processing and data export features.
 
@@ -43,9 +43,9 @@ Widget is loaded on a page with a piece of JavaScript, like this (example):
 ```
 
 When loaded, widget adds an interaction to the web page by rendering its
-components in target DOM elements which you define. Widget takes configuration 
-parameters via ``cub.start()`` method. Required parameter for all actions is 
-``apiKey``. Before you can use the widget, you have to register your 
+components in target DOM elements which you define. Widget takes configuration
+parameters via ``cub.start()`` method. Required parameter for all actions is
+``apiKey``. Before you can use the widget, you have to register your
 application in Cub Admin and get an API key.
 
 Please follow these links for detailed usage instructions:
@@ -89,15 +89,18 @@ version you should update it yourself as new versions become available.
 
 ## Please use latest widget version
 
-We strongly encourage you to use latest widget version and upgrade 
+We strongly encourage you to use latest widget version and upgrade
 to newer version as soon as it becomes available. Technical  support and
 bugfixes are provided for latest version only. Versions marked below as
 'outdated' are not guaranteed to work at all.
 
 ## Changes
 
+* 0.17.x, July 19, 2017
+  - Menu upgrade: added User Photo into User Menu
+
 * 0.16.x, June 24, 2017
-  - 'Add member' from organization management now points to /members/ endpoint and 
+  - 'Add member' from organization management now points to /members/ endpoint and
     creates user with member if it doesn't exist (instead of creating Invitation).
   - 'Resend' and 'Revoke' buttons now both work for newly created users and for old-style
     invitations.
@@ -107,11 +110,11 @@ bugfixes are provided for latest version only. Versions marked below as
 
 * 0.15.x, January 14, 2017
   - introducing 'Keep me signed in' checkbox on Login form
-  - introducing one-click payments for Orders with credit cards which we 
+  - introducing one-click payments for Orders with credit cards which we
     already have on file
   - ACH is now supported as a payment method for Orders
-  - new cross-domain API transport: instead of JSONP we now use iframe + 
-    postMessage. Benefits - it supports large POST requests, better 
+  - new cross-domain API transport: instead of JSONP we now use iframe +
+    postMessage. Benefits - it supports large POST requests, better
     connection errors and timeouts handling.
   - Fixed missed required validation for State and Position fields.
   - prevented re-submission for user forms
@@ -121,7 +124,7 @@ bugfixes are provided for latest version only. Versions marked below as
 * 0.14.x, September 27, 2016
   - introducing Notifications for My Profile page
   - backwards-incompatible changes in Verification Requests API
-  - introducing Paid Plans for Sites: Sign up for a Plan workflow, 
+  - introducing Paid Plans for Sites: Sign up for a Plan workflow,
     Billing page, support for Plans for Verified Users
   - introducing Order Payment page (for one-time purchases)
   - 'Register' menu item on Invitation page now points to the same page
