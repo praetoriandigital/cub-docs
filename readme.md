@@ -97,9 +97,13 @@ bugfixes are provided for latest version only. Versions marked below as
 ## Changes
 
 * 0.17.x, July 19, 2017
-  - Menu upgrade: added User Photo into User Menu
+  - Menu upgrade: added User Photo into User Menu.
+  - Prevent double submit for cub generic forms. 
+  - hideForLogged changed to true by default for "register_me" checkbox. 
+  - Reload user data after lead form submission. 
 
 * 0.16.x, June 24, 2017
+  - 'Register me' checkbox added to generic forms.  
   - 'Add member' from organization management now points to /members/ endpoint and
     creates user with member if it doesn't exist (instead of creating Invitation).
   - 'Resend' and 'Revoke' buttons now both work for newly created users and for old-style
