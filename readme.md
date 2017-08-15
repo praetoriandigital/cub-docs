@@ -53,6 +53,7 @@ Please follow these links for detailed usage instructions:
 * [Users Login and Registration](https://github.com/praetoriandigital/cub-docs/blob/master/registration.md)
 * [Newsletter Subscription Form](https://github.com/praetoriandigital/cub-docs/blob/master/newsletter-form.md)
 * [Lead Forms](https://github.com/praetoriandigital/cub-docs/blob/master/lead-forms.md)
+* [Fields docs](./fields.md)
 
 ## Browser compatibility
 
