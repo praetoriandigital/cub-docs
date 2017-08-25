@@ -108,6 +108,7 @@ bugfixes are provided for latest version only. Versions marked below as
   - GenericForm 'action' option: if set to absolute url with same domain as
     current - xhr(instead xdm) transport will be used. It allows to submit data
     by GenericForm to your domain (xdm has crossdomain submit problems)
+  - Field 'state': new option 'country' - states of which country to suggest
     
 
 * 0.16.x, June 24, 2017

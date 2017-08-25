@@ -47,12 +47,13 @@
   ```
 * **state**: State selector with autosuggestions based on chosen country.
 
-  **IMPORTANT**: will not work without **country** field.
   ```js
       ...
       {
         type: 'state',
         name: 'state', // name MUST be 'state'
+        country: 'Uganda' // states of which country to suggest
+                          // default value: 'United States'
         restrictToKnown: true, // restrict only to known by CUB states
                                // which means - state must be chosen from dropdown list
       },
