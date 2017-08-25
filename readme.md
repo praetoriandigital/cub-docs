@@ -102,6 +102,13 @@ bugfixes are provided for latest version only. Versions marked below as
   - Prevent double submit for cub generic forms. 
   - hideForLogged changed to true by default for "register_me" checkbox. 
   - Reload user data after lead form submission. 
+  - New field 'organization': for finding or creacting new organization
+  - New config option 'siteRaven': pass here your Raven instace to collect
+    additional breadcrumbs and extra context related to the Cub widget
+  - GenericForm 'action' option: if set to absolute url with same domain as
+    current - xhr(instead xdm) transport will be used. It allows to submit data
+    by GenericForm to your domain (xdm has crossdomain submit problems)
+    
 
 * 0.16.x, June 24, 2017
   - 'Register me' checkbox added to generic forms.  
