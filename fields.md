@@ -18,7 +18,7 @@
 * **position**: Position selector with autosuggestions.
   Initial value will be users current position if available.
 
-  **IMPORTANT**: most likely you should use **position** field alongside **orgainzation** field.
+  **IMPORTANT**: most likely you should use **position** field alongside **orgainzation** field. Based on combofox field.
   ```js
       ...
       {
@@ -34,7 +34,7 @@
   ```
 * **country**: Country selector with autosuggestions.
 
-  **IMPORTANT**: most likely you should use **state** field alongside **country** field.
+  **IMPORTANT**: most likely you should use **state** field alongside **country** field. Based on combofox field.
   ```js
       ...
       {
@@ -45,7 +45,7 @@
       },
       ...
   ```
-* **state**: State selector with autosuggestions based on chosen country.
+* **state**: State selector with autosuggestions based on chosen country. Based on combobox field.
 
   ```js
       ...
