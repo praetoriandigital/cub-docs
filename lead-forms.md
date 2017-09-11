@@ -50,7 +50,12 @@ Code sample:
 </body>
 ```
 
-## Providing initial data
+## "Server side" lead forms.
+
+Server side lead form are constructed in cub admin. Use created lead form uid to 
+create lead form as in the example below. 
+
+### Providing initial data
 
 If on your site you're using Cub widget for registration, widget will 
 automatically pre-populate known form fields for logged-in users. Or, you can
@@ -72,45 +77,63 @@ like this:
     ...
 ```
 
-## Email notifications
+## "Client side" lead forms. 
+### Configuring
 
-Email notification recipients can be configured either in Cub admin in Lead Form
-properties, or extracted from FrontContent containers, or both. Cub 
-automatically takes care of avoiding duplicated notifications, so even if the 
-same recipient email is mentioned twice for a lead (for example, if the same 
-person is listed both in Cub and in FC container) - that's fine, Cub will 
-understand that this is the same recipient, and only one notification email will 
-be sent. 
-
-If you'd like to pull notifications for a lead from a FC container, please 
-provide ``notifications`` parameter in form initialization data in the following 
-format:
-
-```
-notifications: '<fc-site>:<container>:<content-ID>'
-```
- 
-... where
-
-* ``<fc-site>`` - can be one of ``p1``, ``c1``, ``fr1``, ``ems1``, ``h1`` - 
-  in which FC Site Cub should look for a container;
-* ``<container>`` - the only supported value for now is ``campaign``;
-* ``<content-ID>`` - primary key (content_id) of a record in that container.
-  
-Example:
+Cub generic form engine could be used for lead forms creation. 
 
 ```js
     ...
     forms: {
       '#lead-form1': {
-        load: '<lead-form-ID>',
-        // Pull notifications from Campaign #42 in P1:
-        notifications: 'p1:campaign:42',
-        ...
+      action: 'leads',
+      form: 'lfm_rMvQ1iRVRgpZ6Asw',  //for required for notification rules and processing rules
+        // The value when a multi-column form layout transforms into a single column (in px)
+        responsiveBreakpoint: 700,
+        fieldsets: [
+          {
+            name: 'responsive-column',
+            // The width for a fieldset layout column (in percents)
+            columnWidth: 100,
+            className: "extraClassNameForFieldSet", // optional, this class will be added to fieldset div container
+            fields: [
+              {
+                name: 'first_name',
+                label: 'First Name',
+                type: 'text'
+              },
+              // Last Name - optional
+              {
+                name: 'last_name',
+                label: 'Last Name',
+                type: 'text'
+              },
+              // Email - required
+              {
+                name: 'email',
+                label: 'Email',
+                type: 'text',
+                required: true
+              },
+            ],
+            // The width for a Submit button layout column (in percents)
+            submitColumnWidth: 100,
+            // Title for Submit button
+            submit: 'Subscribe'
+          }
+        ]
       }
     }
-    ...
+  ...
 ```
+
+See detailed fields description in * [Fields docs](./fields.md)
+
+## Email notifications
+
+Email notification recipients can be configured in Cub admin in Lead Form
+properties. Also is possible that some extra email notifications will be send 
+during lead data processing. 
 
 ## Form events
 

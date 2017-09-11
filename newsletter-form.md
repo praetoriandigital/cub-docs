@@ -48,6 +48,7 @@ Code sample:
                 name: 'responsive-column',
                 // The width for a fieldset layout column (in percents)
                 columnWidth: 100,
+                className: "extraClassNameForFieldSet", // optional, this class will be added to fieldset div container
                 fields: [
                   // First Name - optional
                   {
