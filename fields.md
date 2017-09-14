@@ -59,18 +59,6 @@
       },
       ...
   ```
-* **register_me**: If checked and lead has valid, non exists email it will create new user 
-
-  ```js 
-      {
-        name: 'register_me', // must be register_me
-        label: 'Register Me',
-        type: 'register_me',
-        hideForLogged: true, // When true, hides checkbox for logged user. Default value true. 
-
-      },
-      ...
-  ```
 
 
 ## Other fields

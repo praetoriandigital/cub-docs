@@ -4,7 +4,7 @@ Code sample:
 ```html
 <body>
   <script>
-     // Load Cub widget asynchronously. Put this as higher as possible so 
+     // Load Cub widget asynchronously. Put this as higher as possible so
      // widget will load faster.
      (function(){
        if (document.getElementById("cub-widget-script")) {return;}
@@ -16,17 +16,17 @@ Code sample:
        firstScript.parentNode.insertBefore(cubJs, firstScript);
      }());
   </script>
-  
+
   <div id="lead-form1">
-    <!-- Lead Form will be rendered inside this element, 
+    <!-- Lead Form will be rendered inside this element,
          replacing it's previous contents.
          HINT: you can place a loader icon or text here, like this: -->
     Loading...
   </div>
 
   <!--
-  Cub initialization script needs to be placed on the page only once, no matter 
-  how many forms do you have. You should place it below last form element which 
+  Cub initialization script needs to be placed on the page only once, no matter
+  how many forms do you have. You should place it below last form element which
   needs to be handled by Cub. Configure your forms in 'forms' parameter below:
   -->
   <script>
@@ -35,8 +35,8 @@ Code sample:
       cub.start({
         apiKey: '<your-public-API-key>',
 
-        // 'forms' parameter is an object with CSS selectors as keys and form 
-        // options as values. CSS selectors identify parent containers for 
+        // 'forms' parameter is an object with CSS selectors as keys and form
+        // options as values. CSS selectors identify parent containers for
         // forms to be rendered:
         forms: {
           '#lead-form1': {
@@ -52,12 +52,12 @@ Code sample:
 
 ## "Server side" lead forms.
 
-Server side lead form are constructed in cub admin. Use created lead form uid to 
-create lead form as in the example below. 
+Server side lead form are constructed in cub admin. Use created lead form uid to
+create lead form as in the example below.
 
 ### Providing initial data
 
-If on your site you're using Cub widget for registration, widget will 
+If on your site you're using Cub widget for registration, widget will
 automatically pre-populate known form fields for logged-in users. Or, you can
 provide initial values yourself by passing them in form configuration options,
 like this:
@@ -77,10 +77,10 @@ like this:
     ...
 ```
 
-## "Client side" lead forms. 
+## "Client side" lead forms.
 ### Configuring
 
-Cub generic form engine could be used for lead forms creation. 
+Cub generic form engine could be used for lead forms creation.
 
 ```js
     ...
@@ -119,7 +119,14 @@ Cub generic form engine could be used for lead forms creation.
             // The width for a Submit button layout column (in percents)
             submitColumnWidth: 100,
             // Title for Submit button
-            submit: 'Subscribe'
+            submit: 'Subscribe',
+            // Register Me checkbox.
+            // If checked and lead has valid, non exists email it will create new user
+            registerMe: {
+              checked: true,
+              label: 'Register Me',
+              hideForLogged: true, // When true, hides checkbox for logged user. Default value true.
+            },
           }
         ]
       }
@@ -132,11 +139,10 @@ See detailed fields description in * [Fields docs](./fields.md)
 ## Email notifications
 
 Email notification recipients can be configured in Cub admin in Lead Form
-properties. Also is possible that some extra email notifications will be send 
-during lead data processing. 
+properties. Also is possible that some extra email notifications will be send
+during lead data processing.
 
 ## Form events
 
-Lead Forms support the same events and custom handlers as Newsletter 
+Lead Forms support the same events and custom handlers as Newsletter
 Subscription Form, see [form events](form-events.md) for details.
-
