@@ -80,7 +80,7 @@ available:
    recommended if you use Users Login and Registration and applied custom
    styling to it:
 
-   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.15.x.js>
+   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.17.x.js>
 
 Second option allows you to freeze any updates to widget HTML markup, its API
 and documented behaviour, however you will still receive bugfixes as patch
