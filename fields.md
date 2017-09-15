@@ -10,8 +10,8 @@
       ...
       {
         type: 'organizaiton',
-        name: 'organization', // name MUST be 'organization'
-        //value: 'DONT DO THIS', // value MUST NOT be set
+        // name: 'organization', // name is implicit, you CAN'T change it
+        // value: 'DONT DO THIS', // value MUST NOT be set
       },
       ...
   ```
@@ -23,8 +23,8 @@
       ...
       {
         type: 'position',
-        name: 'position', // name MUST be 'position'
-        //value: 'most likely DONT DO THIS', // value most likely SHOULD NOT be set
+        // name: 'position', // name is implicit, you CAN'T change it
+        // value: 'most likely DONT DO THIS', // value most likely SHOULD NOT be set
         tags: ['Fire', ...] // array of tags to narrow down postitions list
                             // (will show positions related only to this tags)
                             // if not set - site tags will be used
@@ -39,7 +39,7 @@
       ...
       {
         type: 'country',
-        name: 'country', // name MUST be 'country'
+        // name: 'country', // name is implicit, you CAN'T change it
         restrictToKnown: true, // restrict only to known by CUB countries
                                // which means - country must be chosen from dropdown list
       },
@@ -51,7 +51,7 @@
       ...
       {
         type: 'state',
-        name: 'state', // name MUST be 'state'
+        // name: 'state', // name is implicit, you CAN'T change it
         country: 'Uganda' // states of which country to suggest
                           // default value: 'United States'
         restrictToKnown: true, // restrict only to known by CUB states
