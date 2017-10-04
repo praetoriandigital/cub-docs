@@ -33,6 +33,7 @@ with a redirect to your custom page using ``onSuccess`` callback.
   Parameters:
     - formData - object with submitted form fields;
     - formElement - DOM element of ``<form>`` being submitted.
+    
 
 * **onError(topError, fieldErrors, formData, formElement)** - called when form
   submission resulted in error(s). Parameters:
@@ -47,3 +48,5 @@ with a redirect to your custom page using ``onSuccess`` callback.
    behavior. Parameters:
     - formData - object with submitted form fields;
     - formElement - DOM element of ``<form>`` being submitted.
+
+  **IMPORTANT**: if you have async code in onSuccess callback and active ['Register me' feature](./lead-forms.md#register-me-feature) you should return `Deferred` or `Promise` from onSuccess callback and resolve it when async code is done. See example [here](./lead-forms.md#register-me-feature).

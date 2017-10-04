@@ -55,3 +55,7 @@ Widget adds some very basic CSS styles for its elements, but in general it
 leaves styling to you. Please feel free to define or override any styles for
 any elements rendered by widget, just like you do it for any other elements
 on the page.
+
+## 'Register me' feature
+
+User can be automatically registered during form submission using ['Register me' feature](./lead-forms.md#register-me-feature).

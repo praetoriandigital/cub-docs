@@ -50,10 +50,11 @@ application in Cub Admin and get an API key.
 
 Please follow these links for detailed usage instructions:
 
-* [Users Login and Registration](https://github.com/praetoriandigital/cub-docs/blob/master/registration.md)
-* [Newsletter Subscription Form](https://github.com/praetoriandigital/cub-docs/blob/master/newsletter-form.md)
-* [Lead Forms](https://github.com/praetoriandigital/cub-docs/blob/master/lead-forms.md)
+* [Users Login and Registration](./registration.md)
+* [Newsletter Subscription Form](./newsletter-form.md)
+* [Lead Forms](./lead-forms.md)
 * [Fields docs](./fields.md)
+* [Form events](./form-events.md)
 
 ## Browser compatibility
 

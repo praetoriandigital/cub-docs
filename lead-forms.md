@@ -83,58 +83,107 @@ like this:
 Cub generic form engine could be used for lead forms creation.
 
 ```js
-    ...
-    forms: {
-      '#lead-form1': {
+  ...
+  forms: {
+    '#lead-form1': {
       action: 'leads',
       form: 'lfm_rMvQ1iRVRgpZ6Asw',  //for required for notification rules and processing rules
-        // The value when a multi-column form layout transforms into a single column (in px)
-        responsiveBreakpoint: 700,
-        fieldsets: [
+      // The value when a multi-column form layout transforms into a single column (in px)
+      responsiveBreakpoint: 700,
+      fieldsets: [{
+        name: 'responsive-column',
+        // The width for a fieldset layout column (in percents)
+        columnWidth: 100,
+        className: "extraClassNameForFieldSet", // optional, this class will be added to fieldset div container
+        fields: [
           {
-            name: 'responsive-column',
-            // The width for a fieldset layout column (in percents)
-            columnWidth: 100,
-            className: "extraClassNameForFieldSet", // optional, this class will be added to fieldset div container
-            fields: [
-              {
-                name: 'first_name',
-                label: 'First Name',
-                type: 'text'
-              },
-              // Last Name - optional
-              {
-                name: 'last_name',
-                label: 'Last Name',
-                type: 'text'
-              },
-              // Email - required
-              {
-                name: 'email',
-                label: 'Email',
-                type: 'text',
-                required: true
-              },
-            ],
-            // The width for a Submit button layout column (in percents)
-            submitColumnWidth: 100,
-            // Title for Submit button
-            submit: 'Subscribe',
-            // Register Me checkbox.
-            // If checked and lead has valid, non exists email it will create new user
-            registerMe: {
-              checked: true,
-              label: 'Register Me',
-              hideForLogged: true, // When true, hides checkbox for logged user. Default value true.
-            },
-          }
+            name: 'first_name',
+            label: 'First Name',
+            type: 'text'
+          },
+          // Last Name - optional
+          {
+            name: 'last_name',
+            label: 'Last Name',
+            type: 'text'
+          },
+          // Email - required
+          {
+            name: 'email',
+            label: 'Email',
+            type: 'text',
+            required: true
+          },
         ]
-      }
+      }],
+      // The width for a Submit button layout column (in percents)
+      submitColumnWidth: 100,
+      // Title for Submit button
+      submit: 'Subscribe',
     }
+  }
   ...
 ```
 
-See detailed fields description in * [Fields docs](./fields.md)
+See detailed fields description in [Fields docs](./fields.md)
+
+### 'Register me' feature
+
+Cub generic form can be configured to automatically register a new user and redirect to 'experience' page to continue registration process (in case of an existent user redirect will be to 'login' page).
+
+If you defined [onSuccess callback](./form-events.md#supported-callbacks) that has async code you MUST return Deferred/Promise object from onSuccess callback and resolve this Deferred/Promise object when your async code is done. **If you did not return Deferred/Promise object from onSuccess callback CUB-widget will register user and redirect to next page('experience' or 'login') without waiting for your async code.** You can use helpers `cub.helpers.Deferred` or `cub.helpers.Promise`. See examples bellow.
+
+```js
+  ...
+  forms: {
+    '#my-form': {
+      action: 'dummy-api',
+      fieldsets: [{
+        // ... 
+        // config for fields
+        // ... 
+      }],
+      // ... 
+      // other configs for generic form
+      // ... 
+
+      // Register Me checkbox.
+      // If checked and form has valid email it will 
+      //   (if there is no user with this email in DB) 
+      //   create new user and redirect to 'experience' page
+      //     or
+      //   (if there is user with this email in DB) 
+      //   show alert 'You already registered' and redirect to 'login' page
+      //     or
+      //   (if registration API returned error) 
+      //   redirect to 'registration' page
+      registerMe: {
+        checked: true,
+        label: 'Register Me',
+        hideForLogged: true, // When true, hides checkbox for logged user. Default value true.
+        maxTimeout: 5000 // default: 2000 
+                         // max timeout before registering user 
+                         // and redirecting to 'experience' page 
+                         // (or 'login' page for existent users)
+      }
+      onSuccess: function(formData, fromElement) {
+        var dfd = new cub.helpers.Deferred() // Deferred helper
+        console.log('i am synchronous, no problem')
+
+        // simplest async code
+        setTimeout(function() {
+          console.log('wait for me!') 
+          dfd.resolve() // resolve when async code done
+                        // in case of Goolge Analitics you should
+                        // resolve Deferred in 'hitCallback'
+        }, 3000)
+
+        return dfd.promise() // convert Deferred to Promise for safety
+      }
+    }
+  }
+  ...
+```
 
 ## Email notifications
 
