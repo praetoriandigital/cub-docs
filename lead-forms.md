@@ -133,14 +133,22 @@ Cub generic form can be configured to automatically register a new user and redi
 
 If you defined [onSuccess callback](./form-events.md#supported-callbacks) that has async code you MUST return Deferred/Promise object from onSuccess callback and resolve this Deferred/Promise object when your async code is done. **If you did not return Deferred/Promise object from onSuccess callback CUB-widget will register user and redirect to next page('experience' or 'login') without waiting for your async code.** You can use helpers `cub.helpers.Deferred` or `cub.helpers.Promise`. See examples bellow.
 
+**Field 'email' is required for successful registration.** Fields 'first_name', 'last_name', 'middle_name', 'organization' and 'position', if present, will be used to prefill user profile.
+
 ```js
   ...
   forms: {
     '#my-form': {
       action: 'dummy-api',
       fieldsets: [{
+        {
+          name: 'email',
+          label: 'Email',
+          type: 'text',
+          required: true
+        },
         // ... 
-        // config for fields
+        // config for other fields
         // ... 
       }],
       // ... 
