@@ -111,6 +111,7 @@ bugfixes are provided for latest version only. Versions marked below as
     by GenericForm to your domain (xdm has crossdomain submit problems)
   - Field 'state': new option 'country' - states of which country to suggest
   - Field 'checkboxgroup': added 'required' validation
+  - Field 'organization': ability to set initial value
     
 
 * 0.16.x, June 24, 2017

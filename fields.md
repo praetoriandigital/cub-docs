@@ -11,7 +11,8 @@
       {
         type: 'organizaiton',
         // name: 'organization', // name is implicit, you CAN'T change it
-        // value: 'DONT DO THIS', // value MUST NOT be set
+        value: 'org_r0DY7pGnsSkUpZsM', // MUST BE valid organization uid
+                                       // or value will be ignored and dropped
       },
       ...
   ```
