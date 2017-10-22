@@ -128,10 +128,11 @@ Cub generic form engine could be used for lead forms creation.
 See detailed fields description in [Fields docs](./fields.md)
 
 ### 'Register me' feature
+<img src="assets/register_me_success.gif">
 
 Cub generic form can be configured to automatically register a new user and redirect to 'experience' page to continue registration process (in case of an existent user redirect will be to 'login' page).
 
-If you defined [onSuccess callback](./form-events.md#supported-callbacks) that has async code you MUST return Deferred/Promise object from onSuccess callback and resolve this Deferred/Promise object when your async code is done. **If you did not return Deferred/Promise object from onSuccess callback CUB-widget will register user and redirect to next page('experience' or 'login') without waiting for your async code.** You can use helpers `cub.helpers.Deferred` or `cub.helpers.Promise`. See examples bellow.
+If you defined [onSuccess callback](./form-events.md#supported-callbacks) that has async code you MUST return Deferred/Promise object from onSuccess callback and resolve this Deferred/Promise object when your async code is done. **If you did not return Deferred/Promise object from onSuccess callback CUB-widget will register user and (after user clicks on 'Continue' button) redirect to next page('experience' or 'login') without waiting for your async code.** You can use helpers `cub.helpers.Deferred` or `cub.helpers.Promise`. See examples bellow.
 
 **Field 'email' is required for successful registration.** Fields 'first_name', 'last_name', 'middle_name', 'organization' and 'position', if present, will be used to prefill user profile.
 
@@ -161,7 +162,7 @@ If you defined [onSuccess callback](./form-events.md#supported-callbacks) that h
       //   create new user and redirect to 'experience' page
       //     or
       //   (if there is user with this email in DB) 
-      //   show alert 'You already registered' and redirect to 'login' page
+      //   show message 'You already registered' and redirect to 'login' page
       //     or
       //   (if registration API returned error) 
       //   redirect to 'registration' page
@@ -170,8 +171,9 @@ If you defined [onSuccess callback](./form-events.md#supported-callbacks) that h
         label: 'Register Me',
         hideForLogged: true, // When true, hides checkbox for logged user. Default value true.
         maxTimeout: 5000 // default: 2000 
-                         // max timeout before registering user 
-                         // and redirecting to 'experience' page 
+                         // max timeout before showing 'success' message 
+                         // where user can click on 'Continue' button
+                         // to go to 'experience' page 
                          // (or 'login' page for existent users)
       }
       onSuccess: function(formData, fromElement) {

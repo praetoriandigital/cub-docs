@@ -112,7 +112,7 @@ bugfixes are provided for latest version only. Versions marked below as
   - Field 'state': new option 'country' - states of which country to suggest
   - Field 'checkboxgroup': added 'required' validation
   - Field 'organization': ability to set initial value
-    
+  - ['Register me' feature](./lead-forms.md#register-me-feature)
 
 * 0.16.x, June 24, 2017
   - 'Register me' checkbox added to generic forms.  
