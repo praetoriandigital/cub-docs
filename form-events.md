@@ -49,4 +49,4 @@ with a redirect to your custom page using ``onSuccess`` callback.
     - formData - object with submitted form fields;
     - formElement - DOM element of ``<form>`` being submitted.
 
-  **IMPORTANT**: if you have async code in onSuccess callback and active ['Register me' feature](./lead-forms.md#register-me-feature) you should return `Deferred` or `Promise` from onSuccess callback and resolve it when async code is done. See example [here](./lead-forms.md#register-me-feature).
+  **IMPORTANT**: if you have async code in onSuccess callback and active ['Register me' feature](./lead-forms.md#register-me-feature) you should (but not must) return `Deferred` or `Promise` from onSuccess callback and resolve it when async code is done. You should do this if you want to make sure your async code is done before the user goes to registration steps. See example [here](./lead-forms.md#register-me-feature).

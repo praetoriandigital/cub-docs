@@ -130,9 +130,9 @@ See detailed fields description in [Fields docs](./fields.md)
 ### 'Register me' feature
 <img src="assets/register_me_success.gif">
 
-Cub generic form can be configured to automatically register a new user and redirect to 'experience' page to continue registration process (in case of an existent user redirect will be to 'login' page).
+Cub generic form can be configured to automatically register a new user and show success message with 'Continue' button. After click on this 'Continue' button user will be redirected to 'experience' page to continue registration process (in case of an existent user - redirect will be to 'login' page).
 
-If you defined [onSuccess callback](./form-events.md#supported-callbacks) that has async code you MUST return Deferred/Promise object from onSuccess callback and resolve this Deferred/Promise object when your async code is done. **If you did not return Deferred/Promise object from onSuccess callback CUB-widget will register user and (after user clicks on 'Continue' button) redirect to next page('experience' or 'login') without waiting for your async code.** You can use helpers `cub.helpers.Deferred` or `cub.helpers.Promise`. See examples bellow.
+If you defined [an onSuccess callback](./form-events.md#supported-callbacks), that has an async code, and want to make sure this code is done before the user will see success message with 'Continue' button you should return Deferred/Promise object from onSuccess callback and resolve this Deferred/Promise object when your async code is done. Of course, **this is optional**, but if you did not return Deferred/Promise object from the onSuccess callback, **CUB-widget will register the user and (after the user clicks on 'Continue' button) redirect to next page('experience' or 'login') without waiting for your async code.** You can use helpers `cub.helpers.Deferred` or `cub.helpers.Promise`. See examples below.
 
 **Field 'email' is required for successful registration.** Fields 'first_name', 'last_name', 'middle_name', 'organization' and 'position', if present, will be used to prefill user profile.
 
