@@ -114,6 +114,8 @@ bugfixes are provided for latest version only. Versions marked below as
   - Field 'organization': ability to set initial value
   - ['Register me' feature](./lead-forms.md#register-me-feature)
 
+**Outdated versions:**
+
 * 0.16.x, June 24, 2017
   - 'Register me' checkbox added to generic forms.  
   - 'Add member' from organization management now points to /members/ endpoint and
@@ -150,8 +152,6 @@ bugfixes are provided for latest version only. Versions marked below as
   - updated Verification Requests - added Notes
   - widget Forms now support absolute API URLs in 'action' parameter,
     so they can be used with external APIs, not only Cub API
-
-**Outdated versions:**
 
 * 0.13.x, August 5, 2016
   - major HTML markup and styles refactoring
