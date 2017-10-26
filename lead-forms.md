@@ -195,6 +195,32 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks), th
   ...
 ```
 
+## 'Redirect' feature
+<img src="assets/redirect.gif">
+
+If you need to redirect user use `redirect` option.
+User will see success message with 'Continue' button. After click on 'Continue'
+user will be redirected to url provided in `to` key.
+Be aware that **'Register Me' feature has precedence over 'Redirect' feature.**
+User will redirected only if 'Register Me' inactive or unchecked.
+
+```js
+  ...
+  forms: {
+    '#my-form': {
+      action: 'dummy-api',
+      // ... 
+      // other configs for generic form
+      // ... 
+      redirect: {
+        to: '/', // string, must be valid url
+        message: 'You will be redirected to next page.' // optional
+      }, 
+    }
+  }
+  ...
+```
+
 ## Email notifications
 
 Email notification recipients can be configured in Cub admin in Lead Form
