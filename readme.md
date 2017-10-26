@@ -113,6 +113,7 @@ bugfixes are provided for latest version only. Versions marked below as
   - Field 'checkboxgroup': added 'required' validation
   - Field 'organization': ability to set initial value
   - ['Register me' feature](./lead-forms.md#register-me-feature)
+  - [Generic 'success' message](./lead-forms.md#custom-success-message)
 
 **Outdated versions:**
 

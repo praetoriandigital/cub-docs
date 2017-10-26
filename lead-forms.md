@@ -205,3 +205,27 @@ during lead data processing.
 
 Lead Forms support the same events and custom handlers as Newsletter
 Subscription Form, see [form events](form-events.md) for details.
+
+## Custom 'success' message
+
+By default, after successful submit will be showing the message
+'Thank you! Your request successfully submitted.'.
+To change it you can use `successMsgText` config:
+```js
+  ...
+  forms: {
+    '#my-form': {
+      action: 'dummy-api',
+      // ... 
+      // other configs for generic form
+      // ... 
+      successMsgText: 'Hooray!', 
+    }
+  }
+  ...
+```
+Be aware that `successMsgText` affects not only success message
+of simple submits but success messages of 'Register Me' feature too.
+<img src="assets/successMsgText-pie.png">
+
+
