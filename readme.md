@@ -61,7 +61,7 @@ Please follow these links for detailed usage instructions:
 If you want to know what Cub-widget is doing - open browser console
 and enter `cub.debug()`. Cub-widget will start logging actions,
 api requests/responses and other usefull stuff. Be aware that it
-can affect perfomance because internally it users deepcopy of logged items.
+can affect perfomance because internally it uses deepcopy of logged items.
 After `cub.debug()` call, debug logging will be active only for browser
 window where it was called. To stop debug logging use `cub.debug(false)`.
 
