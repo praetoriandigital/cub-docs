@@ -56,6 +56,15 @@ Please follow these links for detailed usage instructions:
 * [Fields docs](./fields.md)
 * [Form events](./form-events.md)
 
+## Debugging
+
+If you want to know what Cub-widget is doing - open browser console
+and enter `cub.debug()`. Cub-widget will start logging actions,
+api requests/responses and other usefull stuff. Be aware that it
+can affect perfomance because internally it users deepcopy of logged items.
+After `cub.debug()` call, debug logging will be active only for browser
+window where it was called. To stop debug logging use `cub.debug(false)`.
+
 ## Browser compatibility
 
 Tested vs. IE9+, Chrome, Firefox, Safari, Mobile Safari and Android Browser.
@@ -115,6 +124,7 @@ bugfixes are provided for latest version only. Versions marked below as
   - ['Register me' feature](./lead-forms.md#register-me-feature)
   - [Generic 'success' message](./lead-forms.md#custom-success-message)
   - ['Redirect' feature](./lead-forms.md#redirect-feature)
+  - ['cub.debug()' feature](./readme.md#debugging)
 
 **Outdated versions:**
 
