@@ -107,6 +107,9 @@ bugfixes are provided for latest version only. Versions marked below as
 
 ## Changes
 
+* 0.18.x, December 06, 2017
+  - react-widgets dependency package update to the latest v4.1.1
+
 * 0.17.x, July 19, 2017
   - Menu upgrade: added User Photo into User Menu.
   - Prevent double submit for cub generic forms. 
@@ -125,6 +128,7 @@ bugfixes are provided for latest version only. Versions marked below as
   - [Generic 'success' message](./lead-forms.md#custom-success-message)
   - ['Redirect' feature](./lead-forms.md#redirect-feature)
   - ['cub.debug()' feature](./readme.md#debugging)
+  - New LabeledMultiselect Control for GenericForm based on react-widgets
 
 **Outdated versions:**
 
