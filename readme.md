@@ -110,14 +110,16 @@ bugfixes are provided for latest version only. Versions marked below as
 * 0.18.x, December 06, 2017
   - react-widgets dependency package update to the latest v4.1.1
   - CSS classes namespace changed from '.CubWidgetMyComponent' to '.cub-MyComponent' according SUIT
+  - group of CSS classes related to '.cub-UserPhoto' was changed to '.cub-Image'
+  - New LabeledOrganitzationLogo Control for GenericForm
 
 **Outdated versions:**
 
 * 0.17.x, July 19, 2017
   - Menu upgrade: added User Photo into User Menu.
-  - Prevent double submit for cub generic forms. 
-  - hideForLogged changed to true by default for "register_me" checkbox. 
-  - Reload user data after lead form submission. 
+  - Prevent double submit for cub generic forms.
+  - hideForLogged changed to true by default for "register_me" checkbox.
+  - Reload user data after lead form submission.
   - New field 'organization': for finding or creacting new organization
   - New config option 'siteRaven': pass here your Raven instace to collect
     additional breadcrumbs and extra context related to the Cub widget
@@ -134,7 +136,7 @@ bugfixes are provided for latest version only. Versions marked below as
   - New LabeledMultiselect Control for GenericForm based on react-widgets
 
 * 0.16.x, June 24, 2017
-  - 'Register me' checkbox added to generic forms.  
+  - 'Register me' checkbox added to generic forms.
   - 'Add member' from organization management now points to /members/ endpoint and
     creates user with member if it doesn't exist (instead of creating Invitation).
   - 'Resend' and 'Revoke' buttons now both work for newly created users and for old-style
