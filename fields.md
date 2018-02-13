@@ -60,6 +60,20 @@
       },
       ...
   ```
+* **image**: Image Upload control for Generic Form. It's used for
+  uploading organization logo.
+
+  **IMPORTANT**: The user should have the admin rights and be active member of
+  organization he wanted to change.
+
+  ```js
+      ...
+      {
+        type: 'image',
+        value: 'org_r0DY7pGnsSkUpZsM', // MUST BE valid organization uid
+      },
+      ...
+  ```
 
 
 ## Other fields
