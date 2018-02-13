@@ -60,6 +60,28 @@
       },
       ...
   ```
+* **multiselect**: Multiselect control with autosuggestions based on react-widgets.
+
+  **IMPORTANT**: The user should have the admin rights and be an active member of
+  the organization he wanted to change.
+
+  ```js
+      ...
+      const _options = [
+        {"id":73770004, "title":"3D Laser Scanners"},
+        {"id":94732, "title":"Accident Reconstruction"},
+      ];
+      const _value = _options[1];
+      ...
+      {
+        type: 'multiselect',
+        options: _options, // the data for Multi Select Control
+        value: '', // init value
+        valueField: 'id', // you could change the name value field. It depends on your data.
+        textField: 'title', // you could change the name text field. It depends on your data.
+      },
+      ...
+  ```
 * **image**: Image Upload control for Generic Form. It's used for
   uploading organization logo.
 
