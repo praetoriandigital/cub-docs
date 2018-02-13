@@ -29,7 +29,7 @@
         tags: ['Fire', ...] // array of tags to narrow down postitions list
                             // (will show positions related only to this tags)
                             // if not set - site tags will be used
-                            // if organization chosen - its tags wil be used  
+                            // if organization chosen - its tags wil be used
       },
       ...
   ```
@@ -68,7 +68,9 @@
 * textarea
 * select
 * combobox
+* multiselect
 * checkbox
+* image
 * checkboxgroup
 * radiogroup
 * inputgroup
