@@ -82,17 +82,15 @@
       },
       ...
   ```
-* **image**: Image Upload control for Generic Form. It's used for
-  uploading organization logo.
-
-  **IMPORTANT**: The user should have the admin rights and be active member of
-  organization he wanted to change.
+* **image**: Image Upload control for Generic Form.
+  It's used for uploading the image to S3.
+  After that this control receives the image URL and posts it with
+  other Generic Form fields.
 
   ```js
       ...
       {
         type: 'image',
-        value: 'org_r0DY7pGnsSkUpZsM', // MUST BE valid organization uid
       },
       ...
   ```
