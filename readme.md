@@ -111,6 +111,9 @@ bugfixes are provided for latest version only. Versions marked below as
   - react-widgets dependency package update to the latest v4.1.1
   - CSS classes namespace changed from '.CubWidgetMyComponent' to '.cub-MyComponent' according SUIT
   - group of CSS classes related to '.cub-UserPhoto' was changed to '.cub-Image'
+  - the User Image layout updates:
+    - the Upload and Remove Buttons have hints instead of texts
+    - the Buttons are moved to the top right corner above the User Image now
   - New LabeledOrganitzationLogo Control for GenericForm
 
 **Outdated versions:**
