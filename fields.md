@@ -91,6 +91,7 @@
       ...
       {
         type: 'image',
+        value: 'https://your-image-url.com', // set init image url (e.g. if Org Logo already set)
       },
       ...
   ```
