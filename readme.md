@@ -115,6 +115,7 @@ bugfixes are provided for latest version only. Versions marked below as
     - the Upload and Remove Buttons have hints instead of texts
     - the Buttons are moved to the top right corner above the User Image now
   - New LabeledOrganitzationLogo Control for GenericForm
+  - New field 'organization_search'
 
 **Outdated versions:**
 

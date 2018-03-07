@@ -16,6 +16,42 @@
       },
       ...
   ```
+
+* **organization_search**: Organization name input with autosuggestions.
+  On submit this field will contain text entered by user or name of found organization.
+  Usage example: [cub.policeone.com/org-search-demo/](https://cub.policeone.com/org-search-demo/)
+  ```js
+      ...
+      {
+        name: 'organization_name',
+        type: 'organization_search',
+        onSearchResult: function(org, setValues) {
+          if (typeof org === 'object') {
+            // if `org` is `object` - existent organization was found
+            // use `setValues` to fill in other fields
+            //   setValues({fieldName: value})
+            //      fieldName - name of field present in this form
+            //      value - desired value
+            setValues({
+              organization_uid: org.id, // if you need org_uid in submit data
+                                        // save it in hidden field
+              country: org.country,
+              phone: org.phone,
+            });
+          } else {
+            // if `org` not `object` but `string` - organization was not found
+            // `org` will be text entered by user
+            setValues({
+              organization_uid: '', // drop org_uid in hidden field
+            })
+          }
+        },
+        nothingFoundMsg: "Existent organization was not found, but that's ok. " +
+                         "Continue filling in other fields."
+      },
+      ...
+  ```
+
 * **position**: Position selector with autosuggestions.
   Initial value will be users current position if available.
 
@@ -33,6 +69,7 @@
       },
       ...
   ```
+
 * **country**: Country selector with autosuggestions.
 
   **IMPORTANT**: most likely you should use **state** field alongside **country** field. Based on combofox field.
@@ -46,6 +83,7 @@
       },
       ...
   ```
+
 * **state**: State selector with autosuggestions based on chosen country. Based on combobox field.
 
   ```js
@@ -60,6 +98,7 @@
       },
       ...
   ```
+
 * **multiselect**: Multiselect control with autosuggestions based on react-widgets.
 
   **IMPORTANT**: The user should have the admin rights and be an active member of
@@ -82,6 +121,7 @@
       },
       ...
   ```
+
 * **image**: Image Upload control for Generic Form.
   It's used for uploading the image to S3.
   After that this control receives the image URL and posts it with
