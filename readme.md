@@ -67,7 +67,7 @@ window where it was called. To stop debug logging use `cub.debug(false)`.
 
 ## Browser compatibility
 
-Tested vs. IE9+, Chrome, Firefox, Safari, Mobile Safari and Android Browser.
+Tested vs. IE10+, Chrome, Firefox, Safari, Mobile Safari and Android Browser.
 
 ## Widget versioning
 
