@@ -116,6 +116,7 @@ bugfixes are provided for latest version only. Versions marked below as
     - the Buttons are moved to the top right corner above the User Image now
   - New LabeledOrganitzationLogo Control for GenericForm
   - New field 'organization_search'
+  - [Cross site SingleSO feature](./registration.md#singleso-feature)
 
 **Outdated versions:**
 

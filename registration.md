@@ -59,3 +59,16 @@ on the page.
 ## 'Register me' feature
 
 User can be automatically registered during form submission using ['Register me' feature](./lead-forms.md#register-me-feature).
+
+## 'SingleSO' feature
+
+If SingleSO enabled for a site, a user would be automatically logged in on
+this site if he is already logged in on one of the sites with enabled
+SingleSO. For SingleSO to work between two sites, SingleSO must be enabled
+for both sites. For the particular user, SingleSO will start to work after
+he accesses the site with enabled SingleSO (already being logged in) or after
+he logs in to the site with enabled SingleSO.
+To work, **SingleSO must be enabled for the site in CubAdmin**.
+If SingleSO enabled, the user should be logged out only with standard
+"#logout" url(or other url configured as logout page),
+**do not try just to delete cub cookies or user will be automatically logged back again**.
