@@ -69,6 +69,10 @@ for both sites. For the particular user, SingleSO will start to work after
 he accesses the site with enabled SingleSO (already being logged in) or after
 he logs in to the site with enabled SingleSO.
 To work, **SingleSO must be enabled for the site in CubAdmin**.
-If SingleSO enabled, the user should be logged out only with standard
+
+If SingleSO enabled and you want to log out a user, the user should be logged out only with standard
 "#logout" url(or other url configured as logout page),
 **do not try just to delete cub cookies or user will be automatically logged back again**.
+
+**After user log out** on a site with enabled SingleSO **further automatic
+logins(with SingleSO) on this site** will be prevented **during current browser session**.
