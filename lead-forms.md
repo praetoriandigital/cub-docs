@@ -254,4 +254,27 @@ Be aware that `successMsgText` affects not only success message
 of simple submits but success messages of 'Register Me' feature too.
 <img src="assets/successMsgText-pie.png">
 
-
+Instead text you can provide HTML with 'successMsgHTML' config.
+'successMsgHTML' has precedence over 'successMsgText'.
+```js
+  ...
+  forms: {
+    '#my-form': {
+      action: 'dummy-api',
+      // ...
+      // other configs for generic form
+      // ...
+      successMsgHTML: '' +
+        '<div class="Form-successContent u-noMargin">' +
+            '<p>My raw HTML.</p>' +
+            '<img src="/static/img/logo_default.jpg" alt="Default logo">' +
+            '<div class="cub-FormGroup cub-FormGroup--buttons">' +
+              '<a class="cub-Button cub-Button--submit">' +
+                '<span class="cub-Button-text">Go Home</span>' +
+              '</a>' +
+            '</div>' +
+        '</div>',
+    }
+  }
+  ...
+```
