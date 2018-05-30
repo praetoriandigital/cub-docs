@@ -117,6 +117,7 @@ bugfixes are provided for latest version only. Versions marked below as
   - New LabeledOrganitzationLogo Control for GenericForm
   - New field 'organization_search'
   - [Cross site SingleSO feature](./registration.md#singleso-feature)
+  - Google Analytics command queue, e.g. `cub.analytics.ga('send', 'event', 'User Login')`
 
 **Outdated versions:**
 
