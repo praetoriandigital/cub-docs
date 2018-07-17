@@ -53,6 +53,7 @@ Please follow these links for detailed usage instructions:
 * [Users Login and Registration](./registration.md)
 * [Newsletter Subscription Form](./newsletter-form.md)
 * [Lead Forms](./lead-forms.md)
+* [Lead Webhooks](./lead-webhooks.md)
 * [Fields docs](./fields.md)
 * [Form events](./form-events.md)
 
