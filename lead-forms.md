@@ -176,7 +176,7 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks), th
                          // to go to 'experience' page 
                          // (or 'login' page for existent users)
       }
-      onSuccess: function(formData, fromElement) {
+      onSuccess: function(formData, fromElement, response) {
         var dfd = new cub.helpers.Deferred() // Deferred helper
         console.log('i am synchronous, no problem')
 
