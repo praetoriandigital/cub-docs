@@ -81,34 +81,44 @@ like this:
 ### Configuring
 
 Cub generic form engine could be used for lead forms creation.
+1. For required for notification rules and processing rules
+2. The value when a multi-column form layout transforms into a single column (in px)
+3. The width for a fieldset layout column in percents.
+4. The width for a field layout column in percents for cases when the a multi-column layout is needed for a fieldset, not just for a form.
+5. Optional, this class will be added to fieldset div container. E.g. cub-Row-column--separated would add border with spacings to Fieldset.
+6. Optional, Last Name.
+7. Required. Email.
+8. The width for a Submit Button layout Column in percents.
+9. Title for a Submit Button.
+10. Legend for a Fieldset.
+
+* This parameter accepts values from 0 to 100 and is a multiple of five (5, 10, 15...).
 
 ```js
   ...
   forms: {
     '#lead-form1': {
       action: 'leads',
-      form: 'lfm_rMvQ1iRVRgpZ6Asw',  //for required for notification rules and processing rules
-      // The value when a multi-column form layout transforms into a single column (in px)
-      responsiveBreakpoint: 700,
+      form: 'lfm_rMvQ1iRVRgpZ6Asw',  // 1
+      responsiveBreakpoint: 700, // 2
       fieldsets: [{
         name: 'responsive-column',
-        // The width for a fieldset layout column (in percents)
-        columnWidth: 100,
-        className: "extraClassNameForFieldSet", // optional, this class will be added to fieldset div container
+        legend: 'Fieldset #1', // 10
+        columnWidth: 100, // 3*
+        className: "extraClassNameForFieldSet", // 5
         fields: [
           {
             name: 'first_name',
             label: 'First Name',
-            type: 'text'
+            type: 'text',
+            width: 50 // 4*
           },
-          // Last Name - optional
-          {
+          { // 6
             name: 'last_name',
             label: 'Last Name',
             type: 'text'
           },
-          // Email - required
-          {
+          { // 7
             name: 'email',
             label: 'Email',
             type: 'text',
@@ -116,10 +126,8 @@ Cub generic form engine could be used for lead forms creation.
           },
         ]
       }],
-      // The width for a Submit button layout column (in percents)
-      submitColumnWidth: 100,
-      // Title for Submit button
-      submit: 'Subscribe',
+      submitColumnWidth: 100, // 8*
+      submit: 'Subscribe' // 9
     }
   }
   ...
@@ -148,32 +156,32 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks), th
           type: 'text',
           required: true
         },
-        // ... 
+        // ...
         // config for other fields
-        // ... 
+        // ...
       }],
-      // ... 
+      // ...
       // other configs for generic form
-      // ... 
+      // ...
 
       // Register Me checkbox.
-      // If checked and form has valid email it will 
-      //   (if there is no user with this email in DB) 
+      // If checked and form has valid email it will
+      //   (if there is no user with this email in DB)
       //   create new user and redirect to 'experience' page
       //     or
-      //   (if there is user with this email in DB) 
+      //   (if there is user with this email in DB)
       //   show message 'You already registered' and redirect to 'login' page
       //     or
-      //   (if registration API returned error) 
+      //   (if registration API returned error)
       //   redirect to 'registration' page
       registerMe: {
         checked: true,
         label: 'Register Me',
         hideForLogged: true, // When true, hides checkbox for logged user. Default value true.
-        maxTimeout: 5000 // default: 2000 
-                         // max timeout before showing 'success' message 
+        maxTimeout: 5000 // default: 2000
+                         // max timeout before showing 'success' message
                          // where user can click on 'Continue' button
-                         // to go to 'experience' page 
+                         // to go to 'experience' page
                          // (or 'login' page for existent users)
       }
       onSuccess: function(formData, fromElement, response) {
@@ -182,7 +190,7 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks), th
 
         // simplest async code
         setTimeout(function() {
-          console.log('wait for me!') 
+          console.log('wait for me!')
           dfd.resolve() // resolve when async code done
                         // in case of Goolge Analitics you should
                         // resolve Deferred in 'hitCallback'
@@ -209,13 +217,13 @@ User will redirected only if 'Register Me' inactive or unchecked.
   forms: {
     '#my-form': {
       action: 'dummy-api',
-      // ... 
+      // ...
       // other configs for generic form
-      // ... 
+      // ...
       redirect: {
         to: '/', // string, must be valid url
         message: 'You will be redirected to next page.' // optional
-      }, 
+      },
     }
   }
   ...
@@ -242,10 +250,10 @@ To change it you can use `successMsgText` config:
   forms: {
     '#my-form': {
       action: 'dummy-api',
-      // ... 
+      // ...
       // other configs for generic form
-      // ... 
-      successMsgText: 'Hooray!', 
+      // ...
+      successMsgText: 'Hooray!',
     }
   }
   ...

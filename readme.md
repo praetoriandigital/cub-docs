@@ -118,6 +118,8 @@ bugfixes are provided for latest version only. Versions marked below as
   - New field 'organization_search'
   - [Cross site SingleSO feature](./registration.md#singleso-feature)
   - Google Analytics command queue, e.g. `cub.analytics.ga('send', 'event', 'User Login')`
+  - [Generic Forms: new multi-column layout for fieldsets: new 'width' parameter for a fields](./lead-forms.md#client-side-lead-forms)
+  - [Generic Forms: new parameter 'legend' for fieldsets](./lead-forms.md#client-side-lead-forms)
 
 **Outdated versions:**
 
