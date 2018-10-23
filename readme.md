@@ -107,6 +107,9 @@ bugfixes are provided for latest version only. Versions marked below as
 
 ## Changes
 
+* 0.19.x, Oct 23, 2018
+  - changed registration wokflow (show benefits page before newsletters)
+
 * 0.18.x, December 06, 2017
   - react-widgets dependency package update to the latest v4.1.1
   - CSS classes namespace changed from '.CubWidgetMyComponent' to '.cub-MyComponent' according SUIT
