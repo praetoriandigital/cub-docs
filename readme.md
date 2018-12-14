@@ -107,11 +107,27 @@ bugfixes are provided for latest version only. Versions marked below as
 
 ## Changes
 
+* 0.22.x, Dec 13, 2018
+  - *work in progress*
+
+* 0.21.x, Nov 9, 2018
+  - improved third-party payments
+  - modified the code of the Billing page to accomodate Stripe API changes
+  - modified the GenericForm component to require Org Size and Org State fields
+    if they are missing in Cub
+
+* 0.20.x, Nov 2, 2018
+  - implemented new SearchGrid component for server-side search
+  - updated other UIs related to members (groups, members count tabs) to use
+    data provided from the server instead of calculated on the client
+  - updated caching mechanism with the ability to skip some data models that
+    will be marked with a special flag
+
 * 0.19.x, Oct 23, 2018
   - changed registration wokflow (show benefits page before newsletters)
 
 * 0.18.x, December 06, 2017
-  - react-widgets dependency package update to the latest v4.1.1
+  - updated react-widgets package to v4.1.1
   - CSS classes namespace changed from '.CubWidgetMyComponent' to '.cub-MyComponent' according SUIT
   - group of CSS classes related to '.cub-UserPhoto' was changed to '.cub-Image'
   - the User Image layout updates:
