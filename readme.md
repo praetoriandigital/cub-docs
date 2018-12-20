@@ -107,6 +107,9 @@ bugfixes are provided for latest version only. Versions marked below as
 
 ## Changes
 
+* 0.23.x, Dec 20, 2018
+  - hid Newsletters step from Registration flow if no Mailing Lists to show
+
 * 0.22.x, Dec 13, 2018
   - *work in progress*
 
