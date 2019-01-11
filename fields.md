@@ -1,6 +1,6 @@
 ## Special fields
 
-* **organization**: Organization selector with autosuggestions.
+* <a name="organization"></a>**organization**: Organization selector with autosuggestions.
   If organization doesn't exist - will show additional fields for new organizaiton. Initial value will be users current organization if available.
 
   **IMPORTANT**: most likely you should use **position** field alongside **orgainzation** field.
@@ -52,7 +52,7 @@
       ...
   ```
 
-* **position**: Position selector with autosuggestions.
+* <a name="position"></a>**position**: Position selector with autosuggestions.
   Initial value will be users current position if available.
 
   **IMPORTANT**: most likely you should use **position** field alongside **orgainzation** field. Based on combofox field.
@@ -136,6 +136,33 @@
       ...
   ```
 
+* <a name="checkboxgroup"></a>**checkboxgroup**: Grouped checkbox inputs.
+  Has 'Check/Uncheck all' button for user convenience.
+  Checkboxes can be arranged into columns.
+
+
+  ```js
+      ...
+      {
+        name: 'newsletters',
+        type: 'checkboxgroup',
+        columns: 2,  // can be 1, 2 or 3; if omitted - 1 column will be used
+        options: [
+          ['mlt_uc4ca4238a0b9238', 'PoliceOne Member Newsletter'],
+          ['mlt_u8f14e45fceea167', 'P1 Breaking News Alerts'],
+          ['mlt_u98f13708210194c', 'P1 Tactical List Newsletter'],
+          ['mlt_RgtfY0bPZ56vakO3', 'P1 Tech Product Alerts'],
+          ['mlt_uc74d97b01eae257', 'P1 Technology Newsletter'],
+        ],
+        value: [  // pre-checked values
+          'mlt_uc4ca4238a0b9238',
+          'mlt_u8f14e45fceea167',
+          'mlt_u98f13708210194c'
+        ]
+      },
+      ...
+  ```
+
 
 ## Other fields
 
@@ -146,7 +173,6 @@
 * multiselect
 * checkbox
 * image
-* checkboxgroup
 * radiogroup
 * inputgroup
 * hidden

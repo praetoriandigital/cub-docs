@@ -175,6 +175,7 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks), th
       //   (if registration API returned error)
       //   redirect to 'registration' page
       registerMe: {
+        // enforced: false, // if true - user will not able to avoid 'Register Me'
         checked: true,
         label: 'Register Me',
         hideForLogged: true, // When true, hides checkbox for logged user. Default value true.
@@ -183,6 +184,8 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks), th
                          // where user can click on 'Continue' button
                          // to go to 'experience' page
                          // (or 'login' page for existent users)
+        // respectRedirect: false, // if set to true - will skip 'experience' and 'login' pages
+                                   // and redirect to `redirect.to` url of 'Redirect' feature
       }
       onSuccess: function(formData, fromElement, response) {
         var dfd = new cub.helpers.Deferred() // Deferred helper
@@ -209,7 +212,8 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks), th
 If you need to redirect user use `redirect` option.
 User will see success message with 'Continue' button. After click on 'Continue'
 user will be redirected to url provided in `to` key.
-Be aware that **'Register Me' feature has precedence over 'Redirect' feature.**
+Be aware that **'Register Me' feature (unless respectRedirect is set to true)
+has precedence over 'Redirect' feature.**
 User will redirected only if 'Register Me' inactive or unchecked.
 
 ```js
@@ -221,8 +225,15 @@ User will redirected only if 'Register Me' inactive or unchecked.
       // other configs for generic form
       // ...
       redirect: {
-        to: '/', // string, must be valid url
+        // to: '/', // string, must be valid url
+        // or it can be function that must return valid url as string
+        to: function (response) {
+          // response - object, body of API response, 
+          // that usually represents instance created by submit.
+          return '/?id=' + response.id;
+        }
         message: 'You will be redirected to next page.' // optional
+        // skipSuccessMsg: false, // if true - skip message and redirect right away
       },
     }
   }

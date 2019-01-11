@@ -90,7 +90,7 @@ available:
    recommended if you use Users Login and Registration and applied custom
    styling to it:
 
-   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.18.x.js>
+   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.23.x.js>
 
 Second option allows you to freeze any updates to widget HTML markup, its API
 and documented behaviour, however you will still receive bugfixes as patch
@@ -109,11 +109,22 @@ bugfixes are provided for latest version only. Versions marked below as
 
 * 0.23.x, Dec 20, 2018
   - hid Newsletters step from Registration flow if no Mailing Lists to show
+  - [field 'checkboxgroup'](./fields.md#user-content-checkboxgroup): 
+    - 'Check/Uncheck all' button
+    - columns layout for checkboxes
+  - fixed error when redirect.to function and respectRedirect were used at the same time
+
+**Outdated versions:**
 
 * 0.22.x, Dec 13, 2018
-  - *work in progress*
+  - [field 'position'](./fields.md#user-content-position):
+    - label changed to "Title/Position"
+  - redirect.to of ['Redirect' feature](./lead-forms.md#redirect-feature) now can be a function
 
 * 0.21.x, Nov 9, 2018
+  - [field 'organization'](./fields.md#user-content-organization): 
+    - collect size and state info for existent orgs (if don't have size and state info)
+  - members are now autoactivated on invite
   - improved third-party payments
   - modified the code of the Billing page to accomodate Stripe API changes
   - modified the GenericForm component to require Org Size and Org State fields
@@ -142,8 +153,6 @@ bugfixes are provided for latest version only. Versions marked below as
   - Google Analytics command queue, e.g. `cub.analytics.ga('send', 'event', 'User Login')`
   - [Generic Forms: new multi-column layout for fieldsets: new 'width' parameter for a fields](./lead-forms.md#client-side-lead-forms)
   - [Generic Forms: new parameter 'legend' for fieldsets](./lead-forms.md#client-side-lead-forms)
-
-**Outdated versions:**
 
 * 0.17.x, July 19, 2017
   - Menu upgrade: added User Photo into User Menu.
