@@ -109,11 +109,12 @@ bugfixes are provided for latest version only. Versions marked below as
 
 * 0.23.x, Dec 20, 2018
   - hid Newsletters step from Registration flow if no Mailing Lists to show
-  - [field 'checkboxgroup'](./fields.md#user-content-checkboxgroup): 
+  - [field 'checkboxgroup'](./fields.md#user-content-checkboxgroup):
     - 'Check/Uncheck all' button
     - columns layout for checkboxes
   - fixed error when redirect.to function and respectRedirect were used at the same time
   - added the optional zip code field to `OrganizationSubform`
+  - added the option to skip the subscribe the site mailing lists when the "RegisterMe" feature is used
 
 **Outdated versions:**
 
@@ -123,7 +124,7 @@ bugfixes are provided for latest version only. Versions marked below as
   - redirect.to of ['Redirect' feature](./lead-forms.md#redirect-feature) now can be a function
 
 * 0.21.x, Nov 9, 2018
-  - [field 'organization'](./fields.md#user-content-organization): 
+  - [field 'organization'](./fields.md#user-content-organization):
     - collect size and state info for existent orgs (if don't have size and state info)
   - members are now autoactivated on invite
   - improved third-party payments
