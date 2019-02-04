@@ -6,6 +6,7 @@
   **IMPORTANT**: most likely you should use **position** field alongside **orgainzation** field.
 
   **IMPORTANT**: saved value will be organization ID of chosen or created organization
+
   ```js
       ...
       {
@@ -13,6 +14,18 @@
         // name: 'organization', // name is implicit, you CAN'T change it
         value: 'org_r0DY7pGnsSkUpZsM', // MUST BE valid organization uid
                                        // or value will be ignored and dropped
+      },
+      ...
+  ```
+
+  To include Postal Code field in the additional fields for creation or updating
+  of an organization, set the `requirePostalCode: true` option:
+
+  ```js
+      ...
+      {
+        type: 'organizaiton',
+        requirePostalCode: true,
       },
       ...
   ```

@@ -113,6 +113,7 @@ bugfixes are provided for latest version only. Versions marked below as
     - 'Check/Uncheck all' button
     - columns layout for checkboxes
   - fixed error when redirect.to function and respectRedirect were used at the same time
+  - added the optional zip code field to `OrganizationSubform`
 
 **Outdated versions:**
 
