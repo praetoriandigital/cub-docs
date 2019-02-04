@@ -186,6 +186,8 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks), th
                          // (or 'login' page for existent users)
         // respectRedirect: false, // if set to true - will skip 'experience' and 'login' pages
                                    // and redirect to `redirect.to` url of 'Redirect' feature
+        // skip_subscribe: false, // if set to true - will skip subscribe to
+                                  // the site mailing lists with enabled "Subscribe at registration" flag
       }
       onSuccess: function(formData, fromElement, response) {
         var dfd = new cub.helpers.Deferred() // Deferred helper
@@ -228,7 +230,7 @@ User will redirected only if 'Register Me' inactive or unchecked.
         // to: '/', // string, must be valid url
         // or it can be function that must return valid url as string
         to: function (response) {
-          // response - object, body of API response, 
+          // response - object, body of API response,
           // that usually represents instance created by submit.
           return '/?id=' + response.id;
         }
