@@ -34,11 +34,18 @@ For SAML 2.0 in OneSource, we have implemented **Just-in-Time Provisioning**, wh
 
 For now, we support only **IdP-initiated Login Flow** (when users are redirected from IdP to OneSource).  But we can implement **SP-initiated Login Flow** if needed.
 
+To setup SAML 2.0 SSO we would provide you "SSO service URL" ('Single sign-on URL' in terms of OKTA, or "Relying party SAML 2.0 SSO service URL" in terms of Active Directory) and expect from you to provide us link to your SAML 2.0 IdP 'Metadata configuration' and configure those 'Attribute Statements': 'Email', 'LastName' and 'FirstName'.
+
 
 ### OAuth 2.0
 Currently, **OAuth 2.0** is used for login/registration on the PD sites with Facebook or Google accounts.
 Using OAuth 2.0 code authorization flow, we acquire the `access_token` and then using Graph API (for Facebook) or OpenID Connect `id_token` (for Google) we pull data about the user.
 If you wanted to use OAuth 2.0 for SSO, you would need to implement **OAuth 2.0 Code Authorization flow** (https://oauth.net/2/grant-types/authorization-code/) and **provide us some API to pull from your system the data required for user registration/login**.
+
+Bare minimum data that we need to register new user are `email`(or `username`), `first name` and
+`last name`. In some cases it may be required to pull some additional data (for
+example, organization membership), so, we would need API from you to pull this
+data.
 
 
 ## SCIM for users sync
@@ -47,8 +54,10 @@ when users login/access PD site for the first time. In most cases this is ok.
 But sometimes it may be required to have users accounts created in OneSource
 before they access PD site (for example, to allow Organization Admin to
 assign some courses to users in LMS).
-For such cases, we support **SCIM** protocol(http://www.simplecloud.info/#Overview).
+For such cases, we support **SCIM** protocol (http://www.simplecloud.info/#Overview).
 Using SCIM user accounts from your system can be synced to OneSource.
+
+Currently, we support sync for this user data: `email`, `username`, `first name`, `last name`, `organization membership`, `is member active?`, `is member admin of the organization?`.
 
 
 ## Use cases and examples
