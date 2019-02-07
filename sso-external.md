@@ -2,13 +2,13 @@
 Status: DRAFT
 
 ## OneSource system and client-side widget
-Praetorian Digital (PD, for short) has a wide network of sites including dozens
-of LMS sites and media news sites. To avoid users accounts duplication and allow users
-to access PD sites with the same account we have **OneSource** system and **OneSource
+Praetorian Digital (PD, for short) has a wide network of sites, including dozens
+of LMS sites and media news sites. To avoid user account duplications and to allow users
+to access PD sites with the same account, we have **OneSource** system and **OneSource
 Widget**. OneSource is our system for users auth and management.
 Common users of sites do not access OneSource directly and all communication
-with OneSource server is handled with [OneSource Widget](./#cub-widget)
-(sometimes called cub-widget, which is a legacy name).
+with the OneSource server is handled with [OneSource Widget](./#cub-widget)
+(sometimes called by its legacy name, cub-widget).
 
 So, when we talk about SSO between PD sites and other systems, we imply that
 OneSource would be an essential part of this integration.
