@@ -28,8 +28,8 @@ and OAuth 2.0 are implemented in OneSource.
 ### SAML 2.0
 Here is a good overview of SAML 2.0: https://www.okta.com/integrate/documentation/saml/
 
-The two main components of SAML 2.0 are **Identity Provider (IdP)** and **Service Provider(SP)**.
-**IdP** allows **SP** to authorize and authenticate a user. The OneSource is an **SP**, and to sign-in users from another system into the PD site, we would need an **IdP** (for example, OKTA or Active Directory).
+The two main components of SAML 2.0 are the **Identity Provider (IdP)** and the **Service Provider(SP)**.
+An **IdP** allows an **SP** to authorize and authenticate a user.  OneSource is an **SP**, and to sign-in users from another system into the PD site, we would need an **IdP** (for example, OKTA or Active Directory).
 For SAML 2.0 in OneSource, we have implemented **Just-in-Time Provisioning**, which means that users will be created in OneSource upon login.
 
 For now, we support only **IdP-initiated Login Flow** (when users are redirected from IdP to OneSource).  But we can implement **SP-initiated Login Flow** if needed.
