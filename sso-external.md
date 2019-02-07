@@ -15,12 +15,12 @@ OneSource would be an essential part of this integration.
 
 ## Available SSO options
 There can be two separate cases for SSO:
-1) When the user wants to **register/login into another system using his PD account**
-2) When the user wants to **register/login into PD sites using an account from another system**
+1) When the user wants to **register/log in to another system using his PD account**
+2) When the user wants to **register/log in to PD sites using an account from another system**
 
-For the case 1 (**logging-in into another system using PD account**) we have implemented **OAuth 2.0** in OneSource that other systems can use to get access to users data and authorize the user.  Currently, it is used only to auth PD staff into internal systems but can be adapted for external systems too.
+For  case 1 (**logging in to another system using PD account**) we have implemented **OAuth 2.0** in OneSource that other systems can use to get access to users data and authorize the user.  Currently, it is used only to auth PD staff into internal systems but can be adapted for external systems too.
 
-For the case 2 (**logging-in into PD sites using an account from another system**)
+For the case 2 (**logging-in to PD sites using an account from another system**)
 we have two options: **SAML 2.0** and **OAuth 2.0**.  Both SAML 2.0
 and OAuth 2.0 are implemented in OneSource.
 
