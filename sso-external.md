@@ -11,7 +11,7 @@ with the OneSource server is handled with [OneSource Widget](./#cub-widget)
 (sometimes called by its legacy name, cub-widget).
 
 So, when we talk about SSO between PD sites and other systems, we imply that
-OneSource would be an essential part of this integration.
+OneSource will be an essential part of this integration.
 
 ## Available SSO options
 There can be two separate cases for SSO:
