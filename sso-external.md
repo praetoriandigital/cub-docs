@@ -40,11 +40,11 @@ To setup SAML 2.0 SSO, we will provide you with an "SSO service URL" ('Single si
 ### OAuth 2.0
 Currently, **OAuth 2.0** is used for login/registration on PD sites with Facebook or Google accounts.
 Using OAuth 2.0 code authorization flow, we acquire the `access_token` and then we pull data about the user using Graph API (for Facebook) or OpenID Connect `id_token` (for Google).
-If you wanted to use OAuth 2.0 for SSO, you would need to implement **OAuth 2.0 Code Authorization flow** (https://oauth.net/2/grant-types/authorization-code/) and **provide us some API to pull the data from your system for user registration/login**.
+If you want to use OAuth 2.0 for SSO, you will need need to implement **OAuth 2.0 Code Authorization flow** (https://oauth.net/2/grant-types/authorization-code/) and **provide us some API to pull the data from your system for user registration/login**.
 
 The bare minimum data that we need to register a new user is `email`(or `username`), `first name` and
 `last name`. In some cases it may be necessary to pull some additional data (for
-example, organization membership), so we would need API from you to pull this
+example, organization membership), so we would need an API from you to pull this
 data.
 
 
