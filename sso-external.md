@@ -49,15 +49,14 @@ data.
 
 
 ## SCIM for users sync
-Using SAML 2.0 and OAuth 2.0 user accounts will be created in OneSource only
-when users login/access PD site for the first time. In most cases this is ok.
-But sometimes it may be required to have users accounts created in OneSource
-before they access PD site (for example, to allow Organization Admin to
+Using SAML 2.0 and OAuth 2.0, user accounts will be created in OneSource only
+when users log in to or access the PD site for the first time. In most cases, this is ok.
+But a user account needs to be created in OneSource before they access the PD site (for example, to allow an Organization Admin to
 assign some courses to users in LMS).
 For such cases, we support **SCIM** protocol (http://www.simplecloud.info/#Overview).
-Using SCIM user accounts from your system can be synced to OneSource.
+Using SCIM, user accounts from your system can be synced to OneSource.
 
-Currently, we support sync for this user data: `email`, `username`, `first name`, `last name`, `organization membership`, `is member active?`, `is member admin of the organization?`.
+Currently, we support sync for the following user data: `email`, `username`, `first name`, `last name`, `organization membership`, `is member active?`, and `is member admin of the organization?`.
 
 
 ## Use cases and examples
