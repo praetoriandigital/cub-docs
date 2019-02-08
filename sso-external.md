@@ -60,6 +60,6 @@ Currently, we support sync for the following user data: `email`, `username`, `fi
 
 
 ## Use cases and examples
-- If you wanted to have links to LMS courses in your system and expect that users will be automatically logged in after they click on the link, then we would need to implement either **SP-initiated Flow for SAML 2.0 with RelayState support** or **OAuth 2.0 integration with your system**.
-- If there would be a special link to login/register in LMS somewhere in your system, then we could use already implemented **IdP-initiated Flow for SAML 2.0**.
+- If you want your system to have links to LMS course and expect that users will be automatically logged in after they click on a link, then we will need to implement either **SP-initiated Flow for SAML 2.0 with RelayState support** or **OAuth 2.0 integration with your system**.
+- If there is a special link to login/register in LMS somewhere in your system, then we could use the already implemented **IdP-initiated Flow for SAML 2.0**.
 
