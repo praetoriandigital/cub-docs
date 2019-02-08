@@ -34,7 +34,7 @@ For SAML 2.0 in OneSource, we have implemented **Just-in-Time Provisioning**, wh
 
 For now, we support only **IdP-initiated Login Flow** (when users are redirected from IdP to OneSource).  But we can implement **SP-initiated Login Flow** if needed.
 
-To setup SAML 2.0 SSO we would provide you "SSO service URL" ('Single sign-on URL' in terms of OKTA, or "Relying party SAML 2.0 SSO service URL" in terms of Active Directory) and expect from you to provide us link to your SAML 2.0 IdP 'Metadata configuration' and configure those 'Attribute Statements': 'Email', 'LastName' and 'FirstName'.
+To setup SAML 2.0 SSO, we will provide you with an "SSO service URL" ('Single sign-on URL' in terms of OKTA, or "Relying party SAML 2.0 SSO service URL" in terms of Active Directory) and expect that you will  provide us a link to your SAML 2.0 IdP 'Metadata configuration' and configure these 'Attribute Statements': 'Email', 'LastName' and 'FirstName'.
 
 
 ### OAuth 2.0
