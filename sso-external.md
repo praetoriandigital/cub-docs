@@ -20,7 +20,7 @@ There are two main cases for which a user would want to use SSO:
 
 For  case 1 (**logging in to another system using PD account**), we have implemented **OAuth 2.0** in OneSource so that other systems can use it to get access to user data and authorize users.  Currently, it is used only to auth PD staff into internal systems, but it can be adapted for external systems too.
 
-For case 2 (**logging-in to PD sites using an account from another system**)
+For case 2 (**logging in to PD sites using an account from another system**)
 we have two options: **SAML 2.0** and **OAuth 2.0**.  Both SAML 2.0
 and OAuth 2.0 are implemented in OneSource.
 
