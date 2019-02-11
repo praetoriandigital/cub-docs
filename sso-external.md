@@ -4,7 +4,7 @@ Status: DRAFT
 ## OneSource system and client-side widget
 Praetorian Digital (PD, for short) has a wide network of sites, including dozens
 of LMS sites and media news sites. To avoid user account duplications and to allow users
-to access PD sites with the same account, we have **OneSource** system and **OneSource
+to access PD sites with the same account, we use the **OneSource** system and the **OneSource
 Widget**. OneSource is our system for users auth and management.
 Common users of sites do not access OneSource directly and all communication
 with the OneSource server is handled with [OneSource Widget](./#cub-widget)
@@ -14,9 +14,9 @@ So, when we talk about SSO between PD sites and other systems, we imply that
 OneSource will be an essential part of this integration.
 
 ## Available SSO options
-There can be two separate cases for SSO:
-1) When the user wants to **register/log in to another system using his PD account**
-2) When the user wants to **register/log in to PD sites using an account from another system**
+There are two main cases for which a user would want to use SSO:
+1) For when the user wants to **register/log in to another system using his PD account**
+2) For when the user wants to **register/log in to PD sites using an account from another system**
 
 For  case 1 (**logging in to another system using PD account**), we have implemented **OAuth 2.0** in OneSource so that other systems can use it to get access to user data and authorize users.  Currently, it is used only to auth PD staff into internal systems, but it can be adapted for external systems too.
 
