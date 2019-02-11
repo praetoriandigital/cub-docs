@@ -32,7 +32,7 @@ The two main components of SAML 2.0 are the **Identity Provider (IdP)** and the 
 An **IdP** allows an **SP** to authorize and authenticate a user.  OneSource is an **SP**, and to be able to sign-in users from another system into the PD site, we would need an **IdP** (for example, OKTA or Active Directory).
 For SAML 2.0 in OneSource, we have implemented **Just-in-Time Provisioning**, which means that users will be created in OneSource upon login.
 
-For now, we support only **IdP-initiated Login Flow** (when users are redirected from IdP to OneSource).  But we can implement **SP-initiated Login Flow** if needed.
+For now, we support only **IdP-initiated Login Flow** (where users are redirected from IdP to OneSource).  But we can implement **SP-initiated Login Flow** if needed.
 
 To setup SAML 2.0 SSO, we will provide you with an "SSO service URL" ('Single sign-on URL' in terms of OKTA, or "Relying party SAML 2.0 SSO service URL" in terms of Active Directory) and expect that you will  provide us with a link to your SAML 2.0 IdP 'Metadata configuration' and configure these 'Attribute Statements': 'Email', 'LastName' and 'FirstName'.
 
@@ -40,7 +40,7 @@ To setup SAML 2.0 SSO, we will provide you with an "SSO service URL" ('Single si
 ### OAuth 2.0
 Currently, **OAuth 2.0** is used for login/registration on PD sites with Facebook or Google accounts.
 Using OAuth 2.0 code authorization flow, we acquire the `access_token` and then we pull data about the user using Graph API (for Facebook) or OpenID Connect `id_token` (for Google).
-If you want to use OAuth 2.0 for SSO, you will need need to implement **OAuth 2.0 Code Authorization flow** (https://oauth.net/2/grant-types/authorization-code/) and **provide us some API to pull the data from your system for user registration/login**.
+If you want to use OAuth 2.0 for SSO, you will need need to implement **OAuth 2.0 Code Authorization flow** (https://oauth.net/2/grant-types/authorization-code/) and **provide us with some API to pull the data from your system for user registration/login**.
 
 The bare minimum data that we need to register a new user is `email`(or `username`), `first name` and
 `last name`. In some cases it may be necessary to pull some additional data (for
