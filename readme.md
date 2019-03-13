@@ -246,7 +246,7 @@ bugfixes are provided for latest version only. Versions marked below as
 * 0.7.x - load site configuration from API
 * 0.6.x - introducing localStorage cache
 
-## Troubleshoouting
+## Troubleshooting
 
 Cub Widget makes its best to be developer-friendly and reports its errors and
 warnings into your browser console. If something goes wrong, please check
