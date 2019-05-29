@@ -74,5 +74,5 @@ If SingleSO enabled and you want to log out a user, the user should be logged ou
 "#logout" url(or other url configured as logout page),
 **do not try just to delete cub cookies or user will be automatically logged back again**.
 
-**After user log out** on a site with enabled SingleSO **further automatic
-logins(with SingleSO) on this site** will be prevented **during current browser session**.
+**If user logs out on a site with enabled SingleSO he will be automatically
+logged out on all other sites that have SingleSO enabled.**

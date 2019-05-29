@@ -107,6 +107,16 @@ bugfixes are provided for latest version only. Versions marked below as
 
 ## Changes
 
+* 0.24.x, May 29, 2019
+  - **ATTENTION!**
+    - cub.policeone.com is now deprecated
+    - default apiUrl was changed to 'https://id.lexipol.com/v1'
+    - if you explicitly pass apiUrl in cub.start you should change it from
+      'https://cub.policeone.com/v1' to 'https://id.lexipol.com/v1'
+      (or cross-site SSO will not work)
+
+**Outdated versions:**
+
 * 0.23.x, Dec 20, 2018
   - hid Newsletters step from Registration flow if no Mailing Lists to show
   - [field 'checkboxgroup'](./fields.md#user-content-checkboxgroup):
@@ -115,8 +125,6 @@ bugfixes are provided for latest version only. Versions marked below as
   - fixed error when redirect.to function and respectRedirect were used at the same time
   - added the optional zip code field to `OrganizationSubform`
   - added the option to skip the subscribe the site mailing lists when the "RegisterMe" feature is used
-
-**Outdated versions:**
 
 * 0.22.x, Dec 13, 2018
   - [field 'position'](./fields.md#user-content-position):
