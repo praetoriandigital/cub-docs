@@ -43,7 +43,9 @@ you will have the same set of permissions as this User.
 ## Data connected to the Application
 Application connection to certain model instance determines if Application 
 will have read/write access to this instance and whether it will receive
-webhooks for this instance (more about when and where webhooks are sent [link])
+webhooks for this instance 
+([more about when and where webhooks are sent](./webhooks.md#where-and-when-webhooks-are-sent))
+
 
 ### User
 User can be connected to the Application:

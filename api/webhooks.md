@@ -42,8 +42,9 @@ you could update or create your local data model.
 ### Where are sent
 Webhooks for particular model instance will be sent to all **enabled
 WebhookEndpoints** of all Applications **connected to this model instance**.
-Here is a description of rules that determine if something is connected 
-to the Application.[link]
+[Here is a description of rules that determine if something is connected 
+to the Application.](./applications.md#data-connected-to-the-application)
+
 
 ### When are sent
 Webhook for model instance is sent when this instance is **created, deleted, 
