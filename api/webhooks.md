@@ -6,13 +6,13 @@ The API allows two systems to work together. But it doesn’t solve the problem
 of keeping data in sync. To make the synchronization process smoother, 
 we have webhooks: 
 * All core models support webhooks that will be called for
-  any object creation/update/delete. 
-* Webhooks will be delivered to the endpoints specified
+  any object creation/update/deletion. 
+* Webhooks are delivered to the endpoints specified
   in the Application settings. 
-* Webhooks contains POST body with the json data in the same format 
+* Webhooks contain a POST body with json data in the same format 
   as an API response for this type of object.
 * Lexipol ID will take care of delivery. It will keep sending webhooks until 
-  response 200 from the endpoint will be received and will give up only 
+  a response 200 is recieved from the endpoint. It gives up only 
   after 29 retries with an increasing timeout. The overall execution time 
   should not exceed 25 hours.
 
