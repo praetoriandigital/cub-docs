@@ -20,7 +20,7 @@ the Secret Key created for your Application.
 TL;DR: Permissions of an Application are defined by the combined permissions 
 of all the Users connected to this Application.
 
-To use the LID API/Widget, you need one of:
+To use the LID API/Widget, you need one of the following:
 * a valid user token (for LID API access on behalf of this User)
 * a secret key (for LID API access on behalf of Application)
 * a public key (for LID Widget)
