@@ -3,18 +3,18 @@ Status: DRAFT
 
 ## Applications and Secret Keys
 When some other system or site wants to integrate with Lexipol ID and 
-get access to API, we will create new Application in Lexipol ID. 
+get access to the API, we will create a new Application in Lexipol ID. 
 Every Application has a Public Key and Secret Key. 
-A Secret Key is something that must be known only by the Lexipol ID server and 
-3rd party server because Secret Key gives access to all data/models stored in
-Lexipol ID connected to Application. So, if someone knows the Secret Key 
-of Application, he can access and modify all data/models connected 
+A Secret Key is something that must be known only to the Lexipol ID server and the
+3rd party server, because a Secret Key gives access to all data/models stored in
+Lexipol ID connected to an Application. So, if someone knows the Secret Key 
+of an Application, he can access and modify all data/models connected 
 to this Application. 
 
-Secret Keys used not only for API access, but they also used for jwt-token 
-signatures. When Lexipol ID issues jwt-token for the User 
-(that will be set as Cookie), it will be signed using Secret Key of 
-Application where user logins/registers. You can verify jwt-token using 
+Secret Keys are not only used for API access. They are also used for jwt-token 
+signatures. When Lexipol ID issues a jwt-token for a User 
+(that will be set as Cookie), it will be signed using the Secret Key of the
+Application where user logs in or registers. You can verify the jwt-token using 
 the Secret Key created for your Application.
 
 ## API access and permissions
