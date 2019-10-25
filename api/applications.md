@@ -12,25 +12,24 @@ of an Application, he can access and modify all data/models connected
 to this Application. 
 
 Secret Keys are not only used for API access. They are also used for jwt-token 
-signatures. When Lexipol ID issues a jwt-token for a User 
-(that will be set as Cookie), it will be signed using the Secret Key of the
+signatures. When Lexipol ID issues a jwt-token for a User, the jwt-token will be signed using the Secret Key of the
 Application where user logs in or registers. You can verify the jwt-token using 
 the Secret Key created for your Application.
 
 ## API access and permissions
-TL;DR: Permissions of the Application are defined by combined permissions 
+TL;DR: Permissions of an Application are defined by the combined permissions 
 of all the Users connected to this Application.
 
-To use LID API/Widget, you need one of:
+To use the LID API/Widget, you need one of:
 * a valid user token (for LID API access on behalf of this User)
 * a secret key (for LID API access on behalf of Application)
 * a public key (for LID Widget)
 
-You have to create a new entry in the Application container in LID 
-admin to generate the keys.
-A user token can be acquired by Application on user login 
-(through LID Widget or LID API) or using a reissue-token API call 
-(if an Application got user token issued for another Application during SSO)
+To generate the keys, you have to create a new entry in the Application container in LID 
+admin.
+A user token can be acquired by the Application on user login 
+(through LID Widget or LID API) or by using a reissue-token API call 
+(if Application got a user token issued for another Application during SSO)
 
 If User is connected to Application, this Application will have read/write 
 access to User's data and the same set of permissions as this User. 
@@ -41,7 +40,7 @@ If a user token is used instead of a secret key for API access,
 you will have the same set of permissions as this User.  
 
 ## Data connected to the Application
-Application connection to certain model instance determines if Application 
+Application connection to certain model instance determines whether Application 
 will have read/write access to this instance and whether it will receive
 webhooks for this instance 
 ([more about when and where webhooks are sent](./webhooks.md#where-and-when-webhooks-are-sent))
@@ -91,33 +90,33 @@ The Product is connected to all active Applications.
 The Plan is connected to all active Applications.
 
 ### ServiceSubscription
-The ServiceSubscription is connected to the Application **if related Customer 
+The ServiceSubscription is connected to the Application **if the related Customer 
 (User or Organization) is connected** to this Application.
 
 ### Order
-The Order is connected to the Application **if related Customer (User
+The Order is connected to the Application **if the related Customer (User
 or Organization) is connected** to this Application.
 
 ### OrderItem
-The OrderItem is connected to the Application **if related Order is connected** 
+The OrderItem is connected to the Application **if the related Order is connected** 
 to this Application.
 
 ### SKU
-The SKU is connected to the Application **if related Product is connected** 
+The SKU is connected to the Application **if the related Product is connected** 
 to this Application.
 
 ### SitePlan
-The SitePlan is connected to the Application **if related Plan is connected** 
+The SitePlan is connected to the Application **if the related Plan is connected** 
 to this Application.
 
 ### Charge
-The Charge is connected to the Application **if related Customer (User
+The Charge is connected to the Application **if the related Customer (User
 or Organization) is connected** to this Application.
 
 ### Subscription (to MailingList)
-The Subscription is connected to the Application **if related User 
+The Subscription is connected to the Application **if the related User 
 is connected** to this Application.
 
 ### MailingList
-The MailingList is connected to the Application **if one fo the related Sites 
+The MailingList is connected to the Application **if one of the related Sites 
 is connected** to this Application.
