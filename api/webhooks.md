@@ -9,7 +9,7 @@ we have webhooks:
   any object creation/update/deletion. 
 * Webhooks are delivered to the endpoints specified
   in the Application settings. 
-* Webhooks contain a POST body with json data in the same format 
+* Webhooks contain a POST body, with json data that is in the same format 
   as an API response for this type of object.
 * Lexipol ID takes care of delivery. It will keep sending webhooks until 
   a response 200 is recieved from the endpoint. It gives up only 
@@ -26,7 +26,7 @@ you are interested), Lexipol ID sends the latest data for the model
 that was updated to the endpoint that you provided us (and implemented 
 on your side). But using only webhooks is not reliable. They should be used 
 together with the API, because:
-* there can be a race condition between webhooks when a webhook may contain 
+* there can be a race condition between the most recent webhooks and a webhook with 
   outdated data(for example, on retries after failed requests);
 * webhooks can get lost, and even the most reliable systems can fail;
 * webhooks can be sent unintentionally from stage environments (because 
