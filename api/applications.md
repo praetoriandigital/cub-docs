@@ -3,8 +3,8 @@ Status: DRAFT
 
 ## Applications and Secret Keys
 When some other system or site wants to integrate with Lexipol ID and 
-get access to the API, we will create a new Application in Lexipol ID. 
-Every Application has a Public Key and Secret Key. 
+get access to the API, we create a new Application in Lexipol ID. 
+Every Application has a Public Key and a Secret Key. 
 A Secret Key is something that must be known only to the Lexipol ID server and the
 3rd party server, because a Secret Key gives access to all data/models stored in
 Lexipol ID connected to an Application. So, if someone knows the Secret Key 
