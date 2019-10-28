@@ -28,12 +28,12 @@ on your side). But using only webhooks is not reliable. They should be used
 together with the API, because:
 * there can be a race condition between webhooks when a webhook may contain 
   outdated data(for example, on retries after failed requests);
-* some webhooks can be lost, and even the most reliable systems sometimes fail;
+* webhooks can get lost, and even the most reliable systems can fail;
 * webhooks can be sent unintentionally from stage environments (because 
   of misconfigurations)
 
 So, webhooks should be considered as signals to pull the latest data 
-through API. Using this most recent data pulled through API, 
+through API. Using this most recent data pulled through the API, 
 you can update or create your local data model.
 
 
