@@ -5,7 +5,7 @@ Status: DRAFT
 The API allows two systems to work together. But it doesn’t solve the problem 
 of keeping data in sync. To make the synchronization process smoother, 
 we have webhooks: 
-* All core models support webhooks that are called for
+* All core models support webhooks, which are called for
   any object creation/update/deletion. 
 * Webhooks are delivered to the endpoints specified
   in the Application settings. 
