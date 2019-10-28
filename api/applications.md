@@ -7,7 +7,7 @@ get access to the API, we create a new Application in Lexipol ID.
 Every Application has a Public Key and a Secret Key. 
 A Secret Key is something that must be known only to the Lexipol ID server and the
 3rd party server, because a Secret Key gives access to all data/models stored in
-Lexipol ID connected to an Application. So, if someone knows the Secret Key 
+Lexipol ID connected to the Application. So, if someone knows the Secret Key 
 of an Application, he can access and modify all data/models connected 
 to this Application. 
 
@@ -33,14 +33,14 @@ A user token can be acquired by the Application on user login
 
 If User is connected to Application, this Application will have read/write 
 access to User's data and the same set of permissions as this User. 
-For example, if User is org-admin, then Application will have permissions 
+For example, if User is an org-admin, then Application will have permissions 
 to edit Organization data and manage members of this Organization.
 
 If a user token is used instead of a secret key for API access, 
 you will have the same set of permissions as this User.  
 
 ## Data connected to the Application
-Application connection to certain model instance determines whether Application 
+Application's connection to a certain model instance determines whether Application 
 will have read/write access to this instance and whether it will receive
 webhooks for this instance 
 ([more about when and where webhooks are sent](./webhooks.md#where-and-when-webhooks-are-sent))
