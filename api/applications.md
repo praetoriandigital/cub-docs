@@ -13,7 +13,7 @@ to this Application. 
 
 Secret Keys are not only used for API access. They are also used for jwt-token 
 signatures. When Lexipol ID issues a jwt-token for a User, the jwt-token will be signed using the Secret Key of the
-Application where user logs in or registers. You can verify the jwt-token using 
+Application that the user logs in or registers from. You can verify the jwt-token using 
 the Secret Key created for your Application.
 
 ## API access and permissions
