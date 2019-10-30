@@ -90,7 +90,7 @@ available:
    recommended if you use Users Login and Registration and applied custom
    styling to it:
 
-   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.24.x.js>
+   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.26.x.js>
 
 Second option allows you to freeze any updates to widget HTML markup, its API
 and documented behaviour, however you will still receive bugfixes as patch
@@ -107,6 +107,19 @@ bugfixes are provided for latest version only. Versions marked below as
 
 ## Changes
 
+* 0.26.x Sep 21, 2019
+  - Added support for create organization members without email. 
+  - CSS fix for buttons. 
+  - Support for multiple trusting organization management in the members form. 
+  - Fixed the bug with double events from LabeledCombobox.
+  - Show discount value on the payment page. 
+ 
+* 0.25.x Sep 12, 2019
+  - Introduced 2 step login form with saml sp initiated flow. 
+  - Password reset functionality was added for the org admins. 
+
+**Outdated versions:**
+
 * 0.24.x, May 29, 2019
   - **ATTENTION!**
     - cub.policeone.com is now deprecated
@@ -114,8 +127,6 @@ bugfixes are provided for latest version only. Versions marked below as
     - if you explicitly pass apiUrl in cub.start you should change it from
       'https://cub.policeone.com/v1' to 'https://id.lexipol.com/v1'
       (or cross-site SSO will not work)
-
-**Outdated versions:**
 
 * 0.23.x, Dec 20, 2018
   - hid Newsletters step from Registration flow if no Mailing Lists to show
