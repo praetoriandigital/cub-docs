@@ -13,7 +13,7 @@ on any site. Key features:
 
 The widget is implemented in pure JavaScript, and talks to a central database
 directly from browser via Cub API. Basic widget integration requires no server
-programming, so you can add it literaly on any site with minimal efforts.
+programming, so you can add it literally on any site with minimal efforts.
 If you need more sophisticated integration options - we have them, too.
 
 ## How it works
@@ -55,6 +55,7 @@ Please follow these links for detailed usage instructions:
 * [Lead Forms](./lead-forms.md)
 * [Fields docs](./fields.md)
 * [Form events](./form-events.md)
+* [Sentry SDK integration](./sentry-integration.md)
 
 ## Debugging
 
@@ -112,7 +113,8 @@ bugfixes are provided for latest version only. Versions marked below as
   - CSS fix for buttons. 
   - Support for multiple trusting organization management in the members form. 
   - Fixed the bug with double events from LabeledCombobox.
-  - Show discount value on the payment page. 
+  - Show discount value on the payment page.
+  - Integrated Sentry SDK.
  
 * 0.25.x Sep 12, 2019
   - Introduced 2 step login form with saml sp initiated flow. 
