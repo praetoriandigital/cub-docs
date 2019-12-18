@@ -91,7 +91,7 @@ available:
    recommended if you use Users Login and Registration and applied custom
    styling to it:
 
-   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.26.x.js>
+   <https://cub-praetorian.netdna-ssl.com/cub-widget.0.27.x.js>
 
 Second option allows you to freeze any updates to widget HTML markup, its API
 and documented behaviour, however you will still receive bugfixes as patch
@@ -107,6 +107,12 @@ bugfixes are provided for latest version only. Versions marked below as
 'outdated' are not guaranteed to work at all.
 
 ## Changes
+
+* 0.27.x Dec 18, 2019
+  - Added the option to display the individual characters of the entered
+    password.
+  - Added the list of password rules to the forms where a new password is
+    required.
 
 * 0.26.x Sep 21, 2019
   - Added support for create organization members without email. 
