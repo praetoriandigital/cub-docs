@@ -99,7 +99,7 @@ Code sample:
 
 ## Providing initial data
 
-If on your site you're using Cub widget for registration, First Name and Last
+If your site uses Cub widget for registration,the First Name and Last
 Name (if present) and Email fields will be pre-populated for logged-in users. Or, you
 can provide initial values for known users yourself via 'value' parameter, like
 this:
@@ -115,8 +115,7 @@ this:
     ...
 ```
 
-If you'd like newsletter checkboxes to be checked on by default, provide value
-for 'subscribe' field as an array:
+To check newsletter checkboxes by default, use an array for the "subscribe" field value:
 
 ```js
     ...
@@ -135,7 +134,7 @@ for 'subscribe' field as an array:
 ## Hiding newsletter checkboxes
 
 Sometimes you may want to hide newsletter checkboxes. This can be done by
-replacing checkboxes with hidden field, like this:
+replacing checkboxes with a hidden field, like this:
 
 ```js
     ...
