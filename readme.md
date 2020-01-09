@@ -2,18 +2,18 @@
 
 # Cub™ Widget
 
-Cub Widget is a lightweight JavaScript application which can be installed
+Cub Widget is a lightweight JavaScript application that can be installed
 on any site. Key features:
 
-* Users Login and Registration for your site, connected to 1.8m users
-  database of Praetorian Digital sites network;
+* User Login and Registration for your site, connected to the 1.8m user
+  database of the Praetorian Digital sites network;
 * Newsletter Subscription Forms for dozens of newsletters for first
   responders;
 * Flexible Lead Forms with centralized processing and data export features.
 
 The widget is implemented in pure JavaScript, and talks to a central database
 directly from browser via Cub API. Basic widget integration requires no server
-programming, so you can add it literally on any site with minimal efforts.
+programming, so you can add it to literally any site with minimal effort.
 If you need more sophisticated integration options - we have them, too.
 
 ## How it works
@@ -43,7 +43,7 @@ Widget is loaded on a page with a piece of JavaScript, like this (example):
 ```
 
 When loaded, widget adds an interaction to the web page by rendering its
-components in target DOM elements which you define. Widget takes configuration
+components in target DOM elements that you define. Widget takes configuration
 parameters via ``cub.start()`` method. Required parameter for all actions is
 ``apiKey``. Before you can use the widget, you have to register your
 application in Cub Admin and get an API key.
@@ -73,11 +73,11 @@ Tested vs. IE10+, Chrome, Firefox, Safari, Mobile Safari and Android Browser.
 ## Widget versioning
 
 Widget versions follow [Semantic Versioning](http://semver.org). You can
-check current version in browser console as ``cub.version``. Changes in public
-widget API or documented behavior result in major or minor version change,
+check the current version in browser console as ``cub.version``. Changes in public
+widget API or documented behavior result in major or minor version changes,
 and bugfixes or internal widget improvements come as patch versions.
 
-Widget script is distributed with MaxCDN using ``cub-praetorian.netdna-ssl.com``
+Widget script is distributed with MaxCDN using the ``cub-praetorian.netdna-ssl.com``
 domain. It supports both HTTP and HTTPS. It is strongly recommended that you
 always use this distribution when including widget on your site, since it comes
 with automatic updates and bugfixes. Two options of widget CDN distribution are
