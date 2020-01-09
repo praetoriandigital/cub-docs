@@ -6,7 +6,7 @@ Cub Widget is a lightweight JavaScript application that can be installed
 on any site. Key features:
 
 * User Login and Registration for your site, connected to the 1.8m user
-  database of the Praetorian Digital sites network;
+  database of the Lexipol sites network;
 * Newsletter Subscription Forms for dozens of newsletters for first
   responders;
 * Flexible Lead Forms with centralized processing and data export features.
