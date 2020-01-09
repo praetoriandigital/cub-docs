@@ -99,7 +99,7 @@ Code sample:
 
 ## Providing initial data
 
-If your site uses Cub widget for registration,the First Name and Last
+If your site uses Cub widget for registration, the First Name and Last
 Name (if present) and Email fields will be pre-populated for logged-in users. Or, you
 can provide initial values for known users yourself via 'value' parameter, like
 this:
