@@ -42,18 +42,18 @@ Add the following HTML code to your site:
 
 ## URL configuration
 
-Contents of cub-widget-app tag depends on URL. By default, widget uses
+Contents of cub-widget-app tags depend on URL. By default, widget uses
 hash URLs, like #login, #registration, etc. Transitions between such URLs
-don't trigger page reload, so the rest of the page around widget menu and
+don't trigger page reload, so the rest of the page around the widget menu and
 widget app elements will remain unchanged. If you'd like to place widget
 forms on different pages of your site, please login to Cub Admin and
-configure URLs for your site in Widget Configuration section.
+configure URLs for your site in the Widget Configuration section.
 
 ## Custom styling
 
 Widget adds some very basic CSS styles for its elements, but in general it
 leaves styling to you. Please feel free to define or override any styles for
-any elements rendered by widget, just like you do it for any other elements
+any elements rendered by widget, just as you would for any other elements
 on the page.
 
 ## 'Register me' feature
@@ -62,15 +62,15 @@ User can be automatically registered during form submission using ['Register me'
 
 ## 'SingleSO' feature
 
-If SingleSO enabled for a site, a user would be automatically logged in on
-this site if he is already logged in on one of the sites with enabled
+If SingleSO is enabled for a site, a user will be automatically logged in on
+this site if he is already logged in to one of the sites with enabled
 SingleSO. For SingleSO to work between two sites, SingleSO must be enabled
 for both sites. For the particular user, SingleSO will start to work after
-he accesses the site with enabled SingleSO (already being logged in) or after
-he logs in to the site with enabled SingleSO.
+they access the site with enabled SingleSO (when already logged in) or after
+they log in to the site with enabled SingleSO.
 To work, **SingleSO must be enabled for the site in CubAdmin**.
 
-If SingleSO enabled and you want to log out a user, the user should be logged out only with standard
+If SingleSO is enabled and you want to log a user out, the user should be logged out only with standard
 "#logout" url(or other url configured as logout page),
 **do not try just to delete cub cookies or user will be automatically logged back again**.
 
