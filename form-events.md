@@ -1,7 +1,7 @@
 ## Form events and custom handlers
 
-For both [Lead Forms](lead-forms.md) and 
-[Newsletter Subscription Form](newsletter-form.md) Cub widget provides the same
+For both [Lead Forms](lead-forms.md) and the
+[Newsletter Subscription Form](newsletter-form.md), Cub widget provides the same
 simple workflow:
 
 1. Submit data to Cub API;
@@ -36,7 +36,7 @@ with a redirect to your custom page using ``onSuccess`` callback.
     
 
 * **onError(topError, fieldErrors, formData, formElement)** - called when form
-  submission resulted in error(s). Parameters:
+  submission results in error(s). Parameters:
     - topError - form-level error, i.e. not related to a particular field, but
       to the whole form;
     - fieldErrors - field-level errors, object with field names and errors;
@@ -48,6 +48,6 @@ with a redirect to your custom page using ``onSuccess`` callback.
    behavior. Parameters:
     - formData - object with submitted form fields;
     - formElement - DOM element of ``<form>`` being submitted;
-    - response - object, body of API response, that usually represents instance created by submit.
+    - response - object, body of API response, which usually represents the instance created by submit.
 
   **IMPORTANT**: if you have async code in onSuccess callback and active ['Register me' feature](./lead-forms.md#register-me-feature) you should (but not must) return `Deferred` or `Promise` from onSuccess callback and resolve it when async code is done. You should do this if you want to make sure your async code is done before the user goes to registration steps. See example [here](./lead-forms.md#register-me-feature).
