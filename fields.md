@@ -68,7 +68,7 @@
 * <a name="position"></a>**position**: Position selector with autosuggestions.
   Initial value will be user's current position if available.
 
-  **IMPORTANT**: most likely you should use **position** field alongside **orgainzation** field. Based on combofox field.
+  **IMPORTANT**: most likely you should use **position** field alongside **orgainzation** field. Based on combobox field.
   ```js
       ...
       {
@@ -85,7 +85,7 @@
 
 * **country**: Country selector with autosuggestions.
 
-  **IMPORTANT**: most likely you should use **state** field alongside **country** field. Based on combofox field.
+  **IMPORTANT**: most likely you should use **state** field alongside **country** field. Based on combobox field.
   ```js
       ...
       {
