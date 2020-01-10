@@ -1,7 +1,7 @@
 ## Special fields
 
 * <a name="organization"></a>**organization**: Organization selector with autosuggestions.
-  If organization doesn't exist - will show additional fields for new organizaiton. Initial value will be users current organization if available.
+  If organization doesn't exist, additional fields for a new organizaiton will show. Initial value will be users current organization if available.
 
   **IMPORTANT**: most likely you should use **position** field alongside **orgainzation** field.
 
@@ -31,7 +31,7 @@
   ```
 
 * **organization_search**: Organization name input with autosuggestions.
-  On submit this field will contain text entered by user or name of found organization.
+  On submit, this field will contain text entered by user or name of found organization.
   Usage example: [cub.policeone.com/org-search-demo/](https://cub.policeone.com/org-search-demo/)
   ```js
       ...
@@ -66,7 +66,7 @@
   ```
 
 * <a name="position"></a>**position**: Position selector with autosuggestions.
-  Initial value will be users current position if available.
+  Initial value will be user's current position if available.
 
   **IMPORTANT**: most likely you should use **position** field alongside **orgainzation** field. Based on combofox field.
   ```js
