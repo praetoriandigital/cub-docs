@@ -4,7 +4,7 @@ Code sample:
 ```html
 <body>
   <script>
-     // Load Cub widget asynchronously. Put this as higher as possible so
+     // Load Cub widget asynchronously. Put this as high as possible so
      // widget will load faster.
      (function(){
        if (document.getElementById("cub-widget-script")) {return;}
@@ -19,7 +19,7 @@ Code sample:
 
   <div id="lead-form1">
     <!-- Lead Form will be rendered inside this element,
-         replacing it's previous contents.
+         replacing its previous contents.
          HINT: you can place a loader icon or text here, like this: -->
     Loading...
   </div>
@@ -52,14 +52,14 @@ Code sample:
 
 ## "Server side" lead forms.
 
-Server side lead form are constructed in cub admin. Use created lead form uid to
+Server side lead forms are constructed in cub admin. Use the created lead form UID to
 create lead form as in the example below.
 
 ### Providing initial data
 
-If on your site you're using Cub widget for registration, widget will
+If your site uses Cub widget for registration, widget will
 automatically pre-populate known form fields for logged-in users. Or, you can
-provide initial values yourself by passing them in form configuration options,
+provide the initial values yourself by passing them in form configuration options,
 like this:
 
 ```js
@@ -138,9 +138,9 @@ See detailed fields description in [Fields docs](./fields.md)
 ### 'Register me' feature
 <img src="assets/register_me_success.gif">
 
-Cub generic form can be configured to automatically register a new user and show success message with 'Continue' button. After click on this 'Continue' button user will be redirected to 'experience' page to continue registration process (in case of an existent user - redirect will be to 'login' page).
+Cub generic form can be configured to automatically register a new user and show a success message with 'Continue' button. After clicking on this 'Continue' button, user will be redirected to the 'experience' page to continue registration process (existing users will redirect to the 'login' page).
 
-If you defined [an onSuccess callback](./form-events.md#supported-callbacks), that has an async code, and want to make sure this code is done before the user will see success message with 'Continue' button you should return Deferred/Promise object from onSuccess callback and resolve this Deferred/Promise object when your async code is done. Of course, **this is optional**, but if you did not return Deferred/Promise object from the onSuccess callback, **CUB-widget will register the user and (after the user clicks on 'Continue' button) redirect to next page('experience' or 'login') without waiting for your async code.** You can use helpers `cub.helpers.Deferred` or `cub.helpers.Promise`. See examples below.
+If you defined [an onSuccess callback](./form-events.md#supported-callbacks), that has an async code, and want to make sure this code is done before the user sees the success message with 'Continue' button, you should return Deferred/Promise object from onSuccess callback and resolve this Deferred/Promise object when your async code is done. Of course, **this is optional**, but if you did not return Deferred/Promise object from the onSuccess callback, **CUB-widget will register the user and (after the user clicks on 'Continue' button) redirect to the next page('experience' or 'login') without waiting for your async code.** You can use helpers `cub.helpers.Deferred` or `cub.helpers.Promise`. See examples below.
 
 **Field 'email' is required for successful registration.** Fields 'first_name', 'last_name', 'middle_name', 'organization' and 'position', if present, will be used to prefill user profile.
 
@@ -211,12 +211,12 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks), th
 ## 'Redirect' feature
 <img src="assets/redirect.gif">
 
-If you need to redirect user use `redirect` option.
-User will see success message with 'Continue' button. After click on 'Continue'
-user will be redirected to url provided in `to` key.
+If you need to redirect user, use `redirect` option.
+User will see success message with 'Continue' button. After clicking on 'Continue'
+user will be redirected to the url provided in `to` key.
 Be aware that **'Register Me' feature (unless respectRedirect is set to true)
 has precedence over 'Redirect' feature.**
-User will redirected only if 'Register Me' inactive or unchecked.
+User will be redirected only if 'Register Me' is inactive or unchecked.
 
 ```js
   ...
@@ -245,7 +245,7 @@ User will redirected only if 'Register Me' inactive or unchecked.
 ## Email notifications
 
 Email notification recipients can be configured in Cub admin in Lead Form
-properties. Also is possible that some extra email notifications will be send
+properties. It is also possible that some extra email notifications will be sent
 during lead data processing.
 
 ## Form events
@@ -255,7 +255,7 @@ Subscription Form, see [form events](form-events.md) for details.
 
 ## Custom 'success' message
 
-By default, after successful submit will be showing the message
+By default, after the following message will show after successful submits:
 'Thank you! Your request successfully submitted.'.
 To change it you can use `successMsgText` config:
 ```js
@@ -271,11 +271,11 @@ To change it you can use `successMsgText` config:
   }
   ...
 ```
-Be aware that `successMsgText` affects not only success message
-of simple submits but success messages of 'Register Me' feature too.
+Be aware that `successMsgText` affects not only the success message
+of simple submits but also those of the 'Register Me' feature.
 <img src="assets/successMsgText-pie.png">
 
-Instead text you can provide HTML with 'successMsgHTML' config.
+Instead of text you can provide HTML with 'successMsgHTML' config.
 'successMsgHTML' has precedence over 'successMsgText'.
 ```js
   ...
