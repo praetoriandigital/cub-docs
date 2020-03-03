@@ -77,7 +77,7 @@ check the current version in browser console as ``cub.version``. Changes in publ
 widget API or documented behavior result in major or minor version changes,
 and bugfixes or internal widget improvements come as patch versions.
 
-Widget script is distributed with MaxCDN using the ``cub-praetorian.netdna-ssl.com``
+Widget script is distributed with StackPath using ``lid.cdn.lexipol.com``
 domain. It supports both HTTP and HTTPS. It is strongly recommended that you
 always use this distribution when including widget on your site, since it comes
 with automatic updates and bugfixes. Two options of widget CDN distribution are
@@ -85,12 +85,14 @@ available:
 
 1. Always latest version - recommended if you use Lead Forms feature only:
 
-   <https://cub-praetorian.netdna-ssl.com/cub-widget.js>
+   <https://lid.cdn.lexipol.com/cub-widget.js>
 
 2. Fixed major and minor version number, always latest patch version -
    recommended if you use Users Login and Registration and applied custom
    styling to it:
-
+    <https://lid.cdn.lexipol.com/cub-widget.0.28.x.js>
+    
+   **Depricated old CDN:**
    <https://cub-praetorian.netdna-ssl.com/cub-widget.0.27.x.js>
 
 Second option allows you to freeze any updates to widget HTML markup, its API
@@ -108,11 +110,20 @@ bugfixes are provided for latest version only. Versions marked below as
 
 ## Changes
 
-* 0.27.x Dec 18, 2019
+*  0.28.x, March 2, 2019
+  - Changed default CDN. 
+
+* 0.27.x,  Dec 7, 2019
   - Added the option to display the individual characters of the entered
     password.
   - Added the list of password rules to the forms where a new password is
     required.
+  - Fixed focus on labeled inputs.
+  - Initial support for OpenId
+  - Better handling for the expired session.
+  - Fixed inputs with icons positioning.
+
+**Outdated versions:**
 
 * 0.26.x Sep 21, 2019
   - Added support for create organization members without email. 
@@ -125,8 +136,6 @@ bugfixes are provided for latest version only. Versions marked below as
 * 0.25.x Sep 12, 2019
   - Introduced 2 step login form with saml sp initiated flow. 
   - Password reset functionality was added for the org admins. 
-
-**Outdated versions:**
 
 * 0.24.x, May 29, 2019
   - **ATTENTION!**
