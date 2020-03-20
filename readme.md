@@ -111,6 +111,8 @@ bugfixes are provided for latest version only. Versions marked below as
 ## Changes
 
 *  0.28.x, March 2, 2019
+  - Registration route for already logged user now redirects to home. 
+  - Fixed errors related to the OpenidConnect/Facebook logins
   - Changed default CDN. 
 
 * 0.27.x,  Dec 7, 2019
