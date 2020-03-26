@@ -91,7 +91,7 @@ available:
    recommended if you use Users Login and Registration and applied custom
    styling to it:
     <https://lid.cdn.lexipol.com/cub-widget.0.28.x.js>
-    
+
    **Depricated old CDN:**
    <https://cub-praetorian.netdna-ssl.com/cub-widget.0.27.x.js>
 
@@ -110,34 +110,34 @@ bugfixes are provided for latest version only. Versions marked below as
 
 ## Changes
 
-*  0.28.x, March 2, 2019
-  - Registration route for already logged user now redirects to home. 
-  - Fixed errors related to the OpenidConnect/Facebook logins
-  - Changed default CDN. 
+* 0.28.x, March 2, 2019
+   - Registration route for already logged user now redirects to home.
+   - Fixed errors related to the OpenidConnect/Facebook logins.
+   - Changed default CDN.
 
-* 0.27.x,  Dec 7, 2019
+* 0.27.x, Dec 7, 2019
   - Added the option to display the individual characters of the entered
     password.
   - Added the list of password rules to the forms where a new password is
     required.
   - Fixed focus on labeled inputs.
-  - Initial support for OpenId
+  - Initial support for OpenId.
   - Better handling for the expired session.
   - Fixed inputs with icons positioning.
 
 **Outdated versions:**
 
-* 0.26.x Sep 21, 2019
-  - Added support for create organization members without email. 
-  - CSS fix for buttons. 
-  - Support for multiple trusting organization management in the members form. 
+* 0.26.x, Sep 21, 2019
+  - Added support for create organization members without email.
+  - CSS fix for buttons.
+  - Support for multiple trusting organization management in the members form.
   - Fixed the bug with double events from LabeledCombobox.
   - Show discount value on the payment page.
   - Integrated Sentry SDK.
- 
-* 0.25.x Sep 12, 2019
-  - Introduced 2 step login form with saml sp initiated flow. 
-  - Password reset functionality was added for the org admins. 
+
+* 0.25.x, Sep 12, 2019
+  - Introduced 2 step login form with saml sp initiated flow.
+  - Password reset functionality was added for the org admins.
 
 * 0.24.x, May 29, 2019
   - **ATTENTION!**
