@@ -29,7 +29,7 @@ To play with this OAuth flow initiation, you could use https://oauthdebugger.com
 
 Here is a concrete example:
 ```
-https://id.lexipol.com/oauth/authorize?client_id=app_RsHaqufAay6MsfIQ&redirect_uri=https%3A%2F%2Foauthdebugger.com%2Fdebug&scope=lid.user%3Aread.profile%20kms.content&state=test
+https://id.lexipol.com/oauth/authorize?client_id=app_RsHaqufAay6MsfIQ&redirect_uri=https%3A%2F%2Foauthdebugger.com%2Fdebug&scope=lid.user%3Aread.profile%20kms.policy:read&state=test
 ```
 
 ### 3) Exchange `authorization_code` for token
@@ -38,7 +38,7 @@ redirected to your `redirect_uri` with `code`. You should exchange this `code`
 for token
 
 ```
-curl -X POST -d 'grant_type=authorization_code&code={code}&client_id={app_uid}&client_secret={app_secret}&redirect_uri={your_redirect_uri}' https://id.lexipol.com/oauth/access_token
+$ curl -X POST -d 'grant_type=authorization_code&code={code}&client_id={app_uid}&client_secret={app_secret}&redirect_uri={your_redirect_uri}' https://id.lexipol.com/oauth/access_token
 {
 "access_token": "{token}",
 "token_type": "bearer"
@@ -49,20 +49,35 @@ Here is how decoded token may look like:
 {'user': 'usr_4M1sitSX2CS8NlqA',
  'app': 'app_RsHaqufAay6MsfIQ',
  'exp': 1584769011,
- 'scope': 'lid.user:read.profile kms.content'}
+ 'scope': 'lid.user:read.profile kms.policy:read'}
 ```
 
 **You may use this token only to access LID API.** For example, to get data about
 the user.
 
-### 4) Issue token to access another application API
+### 4) Get user info from LID API
+```
+$ curl -X GET -H 'Authorization: Bearer {token}' https://id.lexipol.com/v1/users/usr_4M1sitSX2CS8NlqA
+```
+
+### 5) Issue new token to access LID API
+If previously issed token has expired you could request a fresh token
+```
+$ curl -X POST -d 'grant_type=https%3A%2F%2Fid.lexipol.com%2Foauth%2Fgrant-type%2Ftoken-issue&client_id={app_uid}&client_secret={app_secret}&user={user_uid}' https://id.lexipol.com/oauth/access_token
+{
+"access_token": "{token}",
+"token_type": "bearer"
+}
+```
+
+### 6) Issue token to access another application API
 To access the API of another application (not LID), you must issue a delegated token.
 You will be able to do this only if you know UID of this application, and
 during OAuth, you requested scopes related to the application that you 
 want to access.
 
 ```
-curl -X POST -d 'grant_type=https%3A%2F%2Fid.lexipol.com%2Foauth%2Fgrant-type%2Ftoken-issue&client_id={app_uid}&client_secret={app_secret}&app={app_uid_of_application_you_want_to_access}&user={user_uid_on_behalf_of_which_you_want_to_access_application}' https://id.lexipol.com/oauth/access_token
+$ curl -X POST -d 'grant_type=https%3A%2F%2Fid.lexipol.com%2Foauth%2Fgrant-type%2Ftoken-issue&client_id={app_uid}&client_secret={app_secret}&app={app_uid_of_application_you_want_to_access}&user={user_uid_on_behalf_of_which_you_want_to_access_application}' https://id.lexipol.com/oauth/access_token
 {
 "access_token": "{token}",
 "token_type": "bearer"
