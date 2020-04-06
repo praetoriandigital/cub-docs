@@ -86,9 +86,9 @@ $ curl -X POST -d 'grant_type=https%3A%2F%2Fid.lexipol.com%2Foauth%2Fgrant-type%
 Here is how decoded token may look like:
 ```
 {'user': 'usr_4M1sitSX2CS8NlqA',
- 'app': 'app_7fyHSzM18jPZACEu',
+ 'app': 'app_ufPJLafQ66W6yX1s',
  'exp': 1584770564,
- 'scope': 'lid.user:read.profile kms.content',
+ 'scope': 'lid.user:read.profile kms.policy:read',
  'act': {'app': 'app_RsHaqufAay6MsfIQ'}}
 ```
 
