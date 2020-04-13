@@ -12,7 +12,7 @@ to the desired data using "scopes".
 Here is how it works and what you should do:
 
 ### 1) Register your application in LID
-Contact Lexipol Staff rswank@lexipol.com and ask to create an Application.  Your contact will then provide you with your Application's Secret Key and UID, along with a list of available scopes for Step #2.
+Contact Lexipol Staff at rswank@lexipol.com and ask to create an Application.  Your contact will then provide you with your Application's Secret Key and UID, along with a list of available scopes for Step #2.
 
 ### 2) Start OAuth flow
 Redirect the user's browser to this URL:
