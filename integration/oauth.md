@@ -4,7 +4,7 @@ Status: DRAFT
 ## How to get access to the data related to a user
 Your application will be able to get access to only the data of users who are
 connected to your application.
-([more about what means "user connected to application"](/api/applications.md#api-access-and-permissions))
+([More about what "user connected to application" means](/api/applications.md#api-access-and-permissions))
 
 One way to connect the user to your application is to use OAuth and request access
 to the desired data using "scopes".
@@ -12,7 +12,7 @@ to the desired data using "scopes".
 Here is how it works and what you should do:
 
 ### 1) Register your application in LID
-Contact Lexipol Staff at rswank@lexipol.com and ask to create an Application.  Your contact will then provide you with your Application's Secret Key and UID, along with a list of available scopes for Step #2.
+Contact Lexipol Staff at rswank@lexipol.com and ask them to create an Application.  Your contact will then provide you with your Application's Secret Key and UID, along with a list of available scopes for Step #2.
 
 ### 2) Start OAuth flow
 Redirect the user's browser to this URL:
