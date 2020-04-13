@@ -45,7 +45,7 @@ $ curl -X POST -d 'grant_type=authorization_code&code={code}&client_id={app_uid}
 ```
 Here is what a decoded token may look like:
 ```
-{'user': 'usr_4M1sitSX2CS8NlqA',
+{'user': 'usr_vjpyLg7ildvmlOGF',
  'app': 'app_RsHaqufAay6MsfIQ',
  'exp': 1584769011,
  'scope': 'lid.user:read.profile kms.policy:read'}
@@ -57,7 +57,23 @@ the user.
 ### 4) Get user info from LID API
 Next, use the LID API to retrieve data for your desired user. For example...
 ```
-$ curl -X GET -H 'Authorization: Bearer {token}' https://id.lexipol.com/v1/users/usr_4M1sitSX2CS8NlqA
+$ curl -X GET -H 'Authorization: Bearer {token}' https://id.lexipol.com/v1/users/usr_vjpyLg7ildvmlOGF
+{
+  "birth_date": "1990-01-04",
+  "date_joined": "2017-06-19T10:20:28Z",
+  "email": "johnsnow@example.com",
+  "first_name": "John",
+  "gender": "male",
+  "id": "usr_vjpyLg7ildvmlOGF",
+  "last_name": "Snow",
+  "middle_name": "",
+  "object": "user",
+  "original_username": "johnsnow@example.com",
+  "photo_large": null,
+  "photo_small": null,
+  "retired": false,
+  "username": "johnsnow"
+}
 ```
 
 ### 5) Issue new token to access LID API
@@ -84,7 +100,7 @@ $ curl -X POST -d 'grant_type=https%3A%2F%2Fid.lexipol.com%2Foauth%2Fgrant-type%
 ```
 Here is what the decoded token could look like:
 ```
-{'user': 'usr_4M1sitSX2CS8NlqA',
+{'user': 'usr_vjpyLg7ildvmlOGF',
  'app': 'app_ufPJLafQ66W6yX1s',
  'exp': 1584770564,
  'scope': 'lid.user:read.profile kms.policy:read',
