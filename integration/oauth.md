@@ -1,4 +1,4 @@
-# Access to the API
+# # Accessing the LID API (and the API of an integrated application)
 Status: DRAFT
 
 ## How to get access to the data related to a user
