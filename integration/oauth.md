@@ -21,7 +21,7 @@ https://id.lexipol.com/oauth/authorize?client_id={app_uid}&redirect_uri={uri}&sc
 ```
 Where:
 - `client_id` - the UID of your Application in LID (provided in Step #1).
-- `redirect_uri` - where the browser will be redirected with `authorization_code` (see Step #3).
+- `redirect_uri` - provided by you (on Step #1), and where the browser will redirected with `authorization_code` (see Step #3)
 - `scope` - list of scopes (data that you are interested in)
 
 To play with this OAuth flow initiation, you can use https://oauthdebugger.com/
