@@ -77,7 +77,7 @@ $ curl -X GET -H 'Authorization: Bearer {token}' https://id.lexipol.com/v1/users
 ```
 
 ### 5) Issue new token to access LID API
-If the previously issued token has expired, you can request a fresh token by using the following example:
+If the previously issued token has expired, you can request a fresh token:
 ```
 $ curl -X POST -d 'grant_type=https%3A%2F%2Fid.lexipol.com%2Foauth%2Fgrant-type%2Ftoken-issue&client_id={app_uid}&client_secret={app_secret}&user={user_uid}' https://id.lexipol.com/oauth/access_token
 {
