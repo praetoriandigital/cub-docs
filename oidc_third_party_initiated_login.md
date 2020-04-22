@@ -21,8 +21,7 @@ How to configure it:
 ##Endpoint params:
 1) iss, required. 
 2) login_hint, optional. 
-3) target_link_uri, optional. But could be required by a specific LID configuration for security reasons. 
-If target_link_uri passed, LID will check that it is related to the site where the OpenID Connection was configured. 
+3) target_link_uri, optional. But specific LID configurations may require it for security reasons. When target_link_uri is passed, LID will check that the argument is linked to the site where the OpenID Connection was configured. 
 
 
 ## Example of a constructed URL
