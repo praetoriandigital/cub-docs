@@ -18,7 +18,7 @@ How to configure it:
 3) The endpoint URL will be https://id.lexipol.com/sso/oidc/XXXX/ , where XXXX is the LID Identity Provider ID
 
 
-##Endpoint params:
+## Endpoint params:
 1) iss, required. 
 2) login_hint, optional. 
 3) target_link_uri, optional. But specific LID configurations may require it for security reasons. When target_link_uri is passed, LID will check that the argument is linked to the site where the OpenID Connection was configured. 
