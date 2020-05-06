@@ -178,7 +178,7 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks) tha
         // enforced: false, // if true - user will not able to avoid 'Register Me'
         checked: true,
         label: 'Register Me',
-        hideForLogged: true, // When true, hides checkbox for logged user. Default value true.
+        hideForLogged: true, // When true, hides checkbox for logged user. Default value is `true`.
         maxTimeout: 5000 // default: 2000
                          // max timeout before showing 'success' message
                          // where user can click on 'Continue' button
@@ -196,8 +196,8 @@ If you defined [an onSuccess callback](./form-events.md#supported-callbacks) tha
         // simplest async code
         setTimeout(function() {
           console.log('wait for me!')
-          dfd.resolve() // resolve when async code done
-                        // in case of Goolge Analitics you should
+          dfd.resolve() // resolve when async code is done
+                        // in case of Google Analytics you should
                         // resolve Deferred in 'hitCallback'
         }, 3000)
 
