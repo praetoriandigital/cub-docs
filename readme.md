@@ -114,6 +114,9 @@ bugfixes are provided for latest version only. Versions marked below as
    - Registration route for already logged user now redirects to home.
    - Fixed errors related to the OpenidConnect/Facebook logins.
    - Changed default CDN.
+   - Added the option `redirect.requireLogin` (default: `true`) to allow
+     disabling the sign-in requirement for lead forms with redirection
+     configured.
 
 * 0.27.x, Dec 7, 2019
   - Added the option to display the individual characters of the entered

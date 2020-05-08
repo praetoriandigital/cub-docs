@@ -227,14 +227,16 @@ User will be redirected only if 'Register Me' is inactive or unchecked.
       // other configs for generic form
       // ...
       redirect: {
-        // to: '/', // string, must be valid url
-        // or it can be function that must return valid url as string
+        // to: '/', // string, must be valid URL
+        // `to` can also be a function that returns a valid URL as a string:
         to: function (response) {
           // response - object, body of API response,
           // that usually represents instance created by submit.
           return '/?id=' + response.id;
-        }
-        message: 'You will be redirected to next page.' // optional
+        },
+        message: 'You will be redirected to next page.', // optional
+        // requireLogin: true, // if true, the user will be required to log in
+                               // before being redirected to the specified URL  
         // skipSuccessMsg: false, // if true - skip message and redirect right away
       },
     }
