@@ -1,9 +1,9 @@
-# OpenID connect third party initiated login. 
+# OpenID Connect Third party Initiated Login 
 Status: DRAFT
 
-## LID, connected sites
+## Lexipol ID, connected sites
 
-LID is a  solution for users' auth and management. You can connect any application to LID, and it supports different types of identity providers.
+Lexipol ID (LID) is a solution for users' auth and management. You can connect any application to LID, and it supports different types of identity providers.
 
 Connected sites are sites that use LID for auth and user management - for example, the LMS websites.
 
