@@ -92,7 +92,7 @@ available:
    styling to it:
     <https://lid.cdn.lexipol.com/cub-widget.0.28.x.js>
 
-   **Depricated old CDN:**
+   **Deprecated old CDN:**
    <https://cub-praetorian.netdna-ssl.com/cub-widget.0.27.x.js>
 
 Second option allows you to freeze any updates to widget HTML markup, its API

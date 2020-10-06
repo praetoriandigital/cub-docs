@@ -12,7 +12,7 @@ Code sample:
        var cubJs = document.createElement("script");
        cubJs.id = "cub-widget-script";
        // See notes about widget versioning
-       cubJs.src = "//cub-praetorian.netdna-ssl.com/cub-widget.js";
+       cubJs.src = "//lid.cdn.lexipol.com/cub-widget.js";
        firstScript.parentNode.insertBefore(cubJs, firstScript);
      }());
   </script>

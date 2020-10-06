@@ -32,7 +32,7 @@
 
 * **organization_search**: Organization name input with autosuggestions.
   On submit, this field will contain text entered by user or name of found organization.
-  Usage example: [cub.policeone.com/org-search-demo/](https://cub.policeone.com/org-search-demo/)
+  Usage example: [id.lexipol.com/org-search-demo/](https://id.lexipol.com/org-search-demo/)
   ```js
       ...
       {
