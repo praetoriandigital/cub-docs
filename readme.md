@@ -101,12 +101,20 @@ versions until major or minor version changes. Please note that we ship
 bugfixes for latest widget version only, so if you're using fixed widget
 version you should update it yourself as new versions become available.
 
-## Please use latest widget version
+## Please use the latest widget version
 
-We strongly encourage you to use latest widget version and upgrade
+We strongly encourage you to use the latest widget version and upgrade
 to newer version as soon as it becomes available. Technical  support and
 bugfixes are provided for latest version only. Versions marked below as
 'outdated' are not guaranteed to work at all.
+
+## Troubleshooting
+
+Cub Widget makes its best to be developer-friendly and reports its errors and
+warnings into your browser console. If something goes wrong, please check
+messages in browser console first. If that doesn't help, or you found a bug,
+or you'd like to suggest a feature - please feel free to open an
+[Issue on Github](https://github.com/praetoriandigital/cub/issues).
 
 ## Changes
 
@@ -286,11 +294,3 @@ bugfixes are provided for latest version only. Versions marked below as
 * 0.8.x - introducing Mailing List Subscriptions
 * 0.7.x - load site configuration from API
 * 0.6.x - introducing localStorage cache
-
-## Troubleshooting
-
-Cub Widget makes its best to be developer-friendly and reports its errors and
-warnings into your browser console. If something goes wrong, please check
-messages in browser console first. If that doesn't help, or you found a bug,
-or you'd like to suggest a feature - please feel free to open an
-[Issue on Github](https://github.com/praetoriandigital/cub/issues).
